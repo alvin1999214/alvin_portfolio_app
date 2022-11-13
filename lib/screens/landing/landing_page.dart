@@ -1,3 +1,5 @@
+import 'package:alvin_portfolio_app/model/mobile_config.dart';
+import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
@@ -8,6 +10,14 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  late Future<MobileConfig> futureMobileConfig;
+
+  @override
+  void initState() {
+    super.initState();
+    futureMobileConfig = fetchMobileConfig();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
