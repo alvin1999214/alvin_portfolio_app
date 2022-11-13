@@ -1,4 +1,4 @@
-import 'package:alvin_portfolio_app/model/mobile_config.dart';
+import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:flutter/material.dart';
 

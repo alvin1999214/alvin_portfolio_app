@@ -2,17 +2,16 @@ import 'dart:convert';
 import 'dart:async';
 import 'dart:io';
 
-import 'package:alvin_portfolio_app/model/mobile_config.dart';
+import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
+import 'package:alvin_portfolio_app/values/string_value.dart';
 import 'package:http/http.dart' as http;
 
-// class MobileConfigService {
-const token = "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";
-const API =
-    'https://api.github.com/repos/alvin1999214/personal_profile/contents/mobile_config.json';
-const headers = {
+String mToken = "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";
+const API = StringValue.mobileConfigApi;
+var headers = {
   "Content-Type": "application/json",
   "Accept": "application/vnd.github.v3.raw",
-  "Authorization": "Bearer $token",
+  "Authorization": "Bearer $mToken",
 };
 
 Future<MobileConfig> fetchMobileConfig() async {
