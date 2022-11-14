@@ -22,80 +22,70 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: SafeArea(
-          child: Center(
-              child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.flutter_dash,
-            size: 100,
-          ),
-          SizedBox(height: 10),
-
-          //Title
-          Text(
-            "Alvin's Portfolio App",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-          ),
-          SizedBox(height: 50),
-
-          //Sub-title
-          Text(
-            "Please enter the access key",
-            style: TextStyle(fontSize: 20),
-          ),
-          SizedBox(height: 20),
-
-          // textfield
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.black),
-                  borderRadius: BorderRadius.circular(12)),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: TextField(
-                    decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Key",
-                )),
-              ),
-            ),
-          ),
-          SizedBox(height: 10),
-
-          //Or
-          Text(
-            "Or",
-            style: TextStyle(fontSize: 15),
-          ),
-          SizedBox(height: 10),
-
-          //Scan Button
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Container(
-              padding: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Colors.blueGrey,
-                borderRadius: BorderRadius.circular(12),
-              ),
+      appBar: AppBar(
+        title: Text("Login Page"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 60.0),
               child: Center(
-                  child: Text(
-                "Scan QR Code To Login",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
-              )),
+                child: Container(
+                    width: 200,
+                    height: 150,
+                    /*decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(50.0)),*/
+                    child: Icon(
+                      Icons.flutter_dash,
+                      size: 100,
+                    )),
+              ),
             ),
-          ),
-          SizedBox(height: 10),
-        ],
-      ))),
+            Padding(
+              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Access Key',
+                    hintText: ''),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 55.0),
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
+                onPressed: () {
+                  // Navigator.push(
+                  //     context, MaterialPageRoute(builder: (_) => HomePage()));
+                },
+                child: Text(
+                  'Get Access',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                //TODO Scan QR code
+              },
+              child: Text(
+                'Access by QR code',
+                style: TextStyle(color: Colors.blue, fontSize: 15),
+              ),
+            ),
+            SizedBox(
+              height: 130,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
