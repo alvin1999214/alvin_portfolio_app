@@ -11,11 +11,12 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   late Future<MobileConfig> futureMobileConfig;
+  TextEditingController accessKeyController = new TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    futureMobileConfig = fetchMobileConfig();
+    // futureMobileConfig = fetchMobileConfig();
   }
 
   @override
@@ -47,6 +48,7 @@ class _LandingPageState extends State<LandingPage> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
+                controller: accessKeyController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Access Key',
@@ -64,6 +66,9 @@ class _LandingPageState extends State<LandingPage> {
                 onPressed: () {
                   // Navigator.push(
                   //     context, MaterialPageRoute(builder: (_) => HomePage()));
+                  if (accessKeyController.text.isNotEmpty)
+                    futureMobileConfig =
+                        fetchMobileConfig(accessKeyController.text);
                 },
                 child: Text(
                   'Get Access',

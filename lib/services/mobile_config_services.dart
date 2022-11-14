@@ -6,7 +6,7 @@ import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
 import 'package:alvin_portfolio_app/values/string_value.dart';
 import 'package:http/http.dart' as http;
 
-String mToken = "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";
+late String mToken;
 const API = StringValue.mobileConfigApi;
 var headers = {
   "Content-Type": "application/json",
@@ -14,7 +14,8 @@ var headers = {
   "Authorization": "Bearer $mToken",
 };
 
-Future<MobileConfig> fetchMobileConfig() async {
+Future<MobileConfig> fetchMobileConfig(String key) async {
+  mToken = key;
   final response = await http.get(Uri.parse(API), headers: headers);
 
   if (response.statusCode == 200) {
