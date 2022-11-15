@@ -12,12 +12,19 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   late Future<MobileConfig> futureMobileConfig;
-  TextEditingController accessKeyController = new TextEditingController();
+  final TextEditingController accessKeyController = new TextEditingController();
 
   @override
   void initState() {
     super.initState();
     // futureMobileConfig = fetchMobileConfig();
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    accessKeyController.dispose();
+    super.dispose();
   }
 
   @override
@@ -70,13 +77,6 @@ class _LandingPageState extends State<LandingPage> {
                   if (accessKeyController.text.isNotEmpty) {
                     futureMobileConfig =
                         fetchMobileConfig(accessKeyController.text, context);
-                    if (futureMobileConfig != null) {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => HomePage(),
-                          ));
-                    }
                   }
                 },
                 child: Text(
