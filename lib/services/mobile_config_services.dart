@@ -9,17 +9,17 @@ import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-late String mToken;
-const API = StringValue.mobileConfigApi;
-var headers = {
-  "Content-Type": "application/json",
-  "Accept": "application/vnd.github.v3.raw",
-  "Authorization": "Bearer $mToken",
-};
+const url = StringValue.mobileConfigApi;
 
-Future<MobileConfig> fetchMobileConfig(String key, BuildContext context) async {
-  mToken = key;
-  var response = await http.get(Uri.parse(API), headers: headers);
+Future<MobileConfig> fetchMobileConfig(
+    String mToken, BuildContext context) async {
+  var headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/vnd.github.v3.raw",
+    "Authorization": "Bearer $mToken",
+  };
+
+  var response = await http.get(Uri.parse(url), headers: headers);
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
