@@ -68,7 +68,7 @@ class _LandingPageState extends State<LandingPage> {
                   //     context, MaterialPageRoute(builder: (_) => HomePage()));
                   if (accessKeyController.text.isNotEmpty)
                     futureMobileConfig =
-                        fetchMobileConfig(accessKeyController.text);
+                        fetchMobileConfig(accessKeyController.text, context);
                 },
                 child: Text(
                   'Get Access',

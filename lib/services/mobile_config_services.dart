@@ -3,7 +3,9 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
-import 'package:alvin_portfolio_app/values/string_value.dart';
+import 'package:alvin_portfolio_app/values/configure.dart';
+import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 late String mToken;
@@ -14,7 +16,7 @@ var headers = {
   "Authorization": "Bearer $mToken",
 };
 
-Future<MobileConfig> fetchMobileConfig(String key) async {
+Future<MobileConfig> fetchMobileConfig(String key, BuildContext context) async {
   mToken = key;
   final response = await http.get(Uri.parse(API), headers: headers);
 
@@ -25,6 +27,7 @@ Future<MobileConfig> fetchMobileConfig(String key) async {
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
+    showAccessFailDialog(context);
     throw Exception('Failed to load');
   }
 }
