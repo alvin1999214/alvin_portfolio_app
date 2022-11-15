@@ -1,9 +1,10 @@
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
+import 'package:alvin_portfolio_app/screens/home_page.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({Key? key}) : super(key: key);
+  const LandingPage({Key? landingPageKey}) : super(key: landingPageKey);
 
   @override
   State<LandingPage> createState() => _LandingPageState();
@@ -66,9 +67,17 @@ class _LandingPageState extends State<LandingPage> {
                 onPressed: () {
                   // Navigator.push(
                   //     context, MaterialPageRoute(builder: (_) => HomePage()));
-                  if (accessKeyController.text.isNotEmpty)
+                  if (accessKeyController.text.isNotEmpty) {
                     futureMobileConfig =
                         fetchMobileConfig(accessKeyController.text, context);
+                    if (futureMobileConfig != null) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
+                    }
+                  }
                 },
                 child: Text(
                   'Get Access',
