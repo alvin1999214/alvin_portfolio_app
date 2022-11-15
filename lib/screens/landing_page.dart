@@ -1,6 +1,6 @@
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
-import 'package:alvin_portfolio_app/screens/home_page.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
+import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
@@ -53,6 +53,16 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                "Alvin's Portfolio app",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
@@ -77,6 +87,8 @@ class _LandingPageState extends State<LandingPage> {
                   if (accessKeyController.text.isNotEmpty) {
                     futureMobileConfig =
                         fetchMobileConfig(accessKeyController.text, context);
+                  } else {
+                    showEmptyAccessKeyDialog(context);
                   }
                 },
                 child: Text(

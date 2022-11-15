@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:async';
-import 'dart:io';
 
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
 import 'package:alvin_portfolio_app/screens/home_page.dart';
