@@ -5,6 +5,7 @@ import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
 import 'package:alvin_portfolio_app/screens/home_page.dart';
 import 'package:alvin_portfolio_app/values/configure.dart';
 import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
+import 'package:alvin_portfolio_app/widget/rsa.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -12,6 +13,8 @@ const url = StringValue.mobileConfigApi;
 
 Future<MobileConfig> fetchMobileConfig(
     String mToken, BuildContext context) async {
+  //Future<String> decryptedToken = rsaDecrypt(mToken);
+
   var headers = {
     "Content-Type": "application/json",
     "Accept": "application/vnd.github.v3.raw",
