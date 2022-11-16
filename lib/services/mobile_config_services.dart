@@ -13,12 +13,13 @@ const url = StringValue.mobileConfigApi;
 
 Future<MobileConfig> fetchMobileConfig(
     String mToken, BuildContext context) async {
-  //Future<String> decryptedToken = rsaDecrypt(mToken);
+
+  String decryptedToken = await rsaDecrypt(mToken);
 
   var headers = {
     "Content-Type": "application/json",
     "Accept": "application/vnd.github.v3.raw",
-    "Authorization": "Bearer $mToken",
+    "Authorization": "Bearer $decryptedToken",
   };
 
   var response = await http.get(Uri.parse(url), headers: headers);
