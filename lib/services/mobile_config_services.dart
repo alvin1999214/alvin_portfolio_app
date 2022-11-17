@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:async';
 
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
+import 'package:alvin_portfolio_app/model/personal_education_model.dart';
+import 'package:alvin_portfolio_app/model/personal_experience_model.dart';
 import 'package:alvin_portfolio_app/screens/home_page.dart';
 import 'package:alvin_portfolio_app/values/configure.dart';
 import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
@@ -9,12 +11,15 @@ import 'package:alvin_portfolio_app/widget/rsa.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../model/personal_info_model.dart';
+
 const mobileConfigUrl = StringValue.mobileConfigApi;
 const personalInfoUrl = StringValue.personalInfoApi;
 const experienceUrl = StringValue.experienceApi;
 const educationUrl = StringValue.educationApi;
 
 late String accessToken;
+late var headers;
 
 Future<MobileConfig> fetchMobileConfig(
     String mToken, BuildContext context) async {
@@ -22,7 +27,7 @@ Future<MobileConfig> fetchMobileConfig(
   String decryptedToken = await rsaDecrypt(mToken);
   accessToken=decryptedToken;
 
-  var headers = {
+  headers = {
     "Content-Type": "application/json",
     "Accept": "application/vnd.github.v3.raw",
     "Authorization": "Bearer $decryptedToken",
@@ -42,6 +47,42 @@ Future<MobileConfig> fetchMobileConfig(
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
+    showAccessFailDialog(context);
+    throw Exception('Failed to load');
+  }
+}
+
+Future<PersonalInfoModel> fetchPersonalInfoModel(BuildContext context) async{
+
+  var response = await http.get(Uri.parse(personalInfoUrl),headers: headers);
+
+  if(response.statusCode == 200) {
+    return PersonalInfoModel.fromJson(jsonDecode(response.body));
+  } else {
+    showAccessFailDialog(context);
+    throw Exception('Failed to load');
+  }
+}
+
+Future<PersonalExperienceModel> fetchPersonalExperienceModel(BuildContext context) async{
+
+  var response = await http.get(Uri.parse(experienceUrl),headers: headers);
+
+  if(response.statusCode == 200) {
+    return PersonalExperienceModel.fromJson(jsonDecode(response.body));
+  } else {
+    showAccessFailDialog(context);
+    throw Exception('Failed to load');
+  }
+}
+
+Future<PersonalEducationModel> fetchPersonalEducationModel(BuildContext context) async{
+
+  var response = await http.get(Uri.parse(educationUrl),headers: headers);
+
+  if(response.statusCode == 200) {
+    return PersonalEducationModel.fromJson(jsonDecode(response.body));
+  } else {
     showAccessFailDialog(context);
     throw Exception('Failed to load');
   }
