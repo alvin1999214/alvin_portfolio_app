@@ -9,12 +9,18 @@ import 'package:alvin_portfolio_app/widget/rsa.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-const url = StringValue.mobileConfigApi;
+const mobileConfigUrl = StringValue.mobileConfigApi;
+const personalInfoUrl = StringValue.personalInfoApi;
+const experienceUrl = StringValue.experienceApi;
+const educationUrl = StringValue.educationApi;
+
+late String accessToken;
 
 Future<MobileConfig> fetchMobileConfig(
     String mToken, BuildContext context) async {
 
   String decryptedToken = await rsaDecrypt(mToken);
+  accessToken=decryptedToken;
 
   var headers = {
     "Content-Type": "application/json",
@@ -22,7 +28,7 @@ Future<MobileConfig> fetchMobileConfig(
     "Authorization": "Bearer $decryptedToken",
   };
 
-  var response = await http.get(Uri.parse(url), headers: headers);
+  var response = await http.get(Uri.parse(mobileConfigUrl), headers: headers);
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
