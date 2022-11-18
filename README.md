@@ -15,3 +15,7 @@ Function:
 2. RSA: encrypt and decrypt the access
 3. QR code scanning
 4. Deeplink: contact me via whatsapp
+
+18/11/2022 idea
+1. Offline Mode: View profile offline without API request, masked privacy data
+2. Flutter playground: UI design playground
