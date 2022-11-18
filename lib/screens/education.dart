@@ -28,49 +28,101 @@ class _EducationPageState extends State<EducationPage> {
 
   @override
   Widget build(BuildContext context) {
-    if(listEdu!=null)
+    if (listEdu != null) {
       return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            pinned: true,
-            expandedHeight: 250,
-            elevation: 0,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text(this.title),
-              background: Image.network(
-                'http://img1.mukewang.com/5c18cf540001ac8206000338.jpg',
-                fit: BoxFit.cover,
+        backgroundColor: Color(0xffF5F7F9),
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              backgroundColor: Colors.white,
+              pinned: true,
+              expandedHeight: 250,
+              elevation: 0,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text(this.title,style: TextStyle(color: Colors.black),),
+                background: Image.network(
+                  'https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/invest%20-education.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          SliverFixedExtentList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                PersonalEducationModel mList = listEdu![index];
-                return Container(
-                  height: 150,
-                  color: Colors.white,
-                  child: Center(
-                    child: ListTile(
-                      title: Text(mList.program),
-                      subtitle: Text(mList.school),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  PersonalEducationModel mList = listEdu![index];
+                  return Container(
+                    padding: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 24.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(8.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
+                        )
+                      ]
                     ),
-                  ),
-                );
-              },
-              childCount: listEdu!.length,
+                    child: Column(
+                      children: [
+                        Image.network('https://www.cuhk.edu.hk/english/images/college/cw-chu.jpg'),
+                        SizedBox(height: 10),
+                        Text(
+                          mList.program,
+                          style: const TextStyle(
+                            color: Color(0xff454F57),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          mList.school,
+                          style: const TextStyle(
+                              color: Color(0xff9BA4AB), fontSize: 12),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text(mList.from,
+                                style: const TextStyle(
+                                    color: Color(0xff9BA4AB), fontSize: 12)),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("to",
+                                style: const TextStyle(
+                                    color: Color(0xff9BA4AB), fontSize: 12)),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(mList.to,
+                                style: const TextStyle(
+                                    color: Color(0xff9BA4AB), fontSize: 12))
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                },
+                childCount: listEdu!.length,
+              ),
             ),
-            itemExtent: 300,
-          ),
-        ],
-      ),
-    );
-    else
+          ],
+        ),
+      );
+    } else {
       return Scaffold(
         appBar: AppBar(
           title: Text("Loading..."),
         ),
       );
+    }
   }
 }

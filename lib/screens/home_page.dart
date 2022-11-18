@@ -38,22 +38,22 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Personal Info',
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xff172633),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.work),
             label: 'Experience',
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xff172633),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: 'Education',
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xff172633),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.smartphone_outlined),
             label: 'MY Project',
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xff172633),
           ),
         ],
         currentIndex: _selectedIndex,
