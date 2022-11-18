@@ -29,42 +29,83 @@ class _PersonalPageState extends State<PersonalPage>{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverPersistentHeader(
-            pinned: true,
-            delegate: SliverCustomHeaderDelegate(
-                title: "Personal Information",
-                collapsedHeight: 40,
-                expandedHeight: 300,
-                paddingTop: MediaQuery.of(context).padding.top,
-                coverImgUrl: 'https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg'
+    if (mInfoObj != null) {
+      return Scaffold(
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverPersistentHeader(
+              pinned: true,
+              delegate: SliverCustomHeaderDelegate(
+                  title: "Personal Information",
+                  collapsedHeight: 40,
+                  expandedHeight: 300,
+                  paddingTop: MediaQuery.of(context).padding.top,
+                  coverImgUrl: 'https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg'
+              ),
             ),
-          ),
-          SliverFillRemaining(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(height: 10),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+            SliverFillRemaining(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: Image.network(
-                        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png',
-                        width: 130,
-                        height: 180,
-                        fit: BoxFit.cover,
-                      ),
+                    SizedBox(height: 10),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(6),
+                          child: Image.network(
+                            'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png',
+                            width: 130,
+                            height: 180,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(left: 16)),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              mInfoObj!.info.name,
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF333333),
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 10)),
+                            Text(
+                              "Phone: ${mInfoObj!.info.phone}",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color(0xFF999999),
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 2)),
+                            Text(
+                              "Address: ${mInfoObj!.info.address}",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color(0xFF999999),
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 2)),
+                            Text(
+                              "Github: ${mInfoObj!.info.github}",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color(0xFF999999),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    Padding(padding: EdgeInsets.only(left: 16)),
+                    Divider(height: 32),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          mInfoObj!.info.name,
+                          'Career Objective',
                           style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
@@ -73,23 +114,8 @@ class _PersonalPageState extends State<PersonalPage>{
                         ),
                         Padding(padding: EdgeInsets.only(top: 10)),
                         Text(
-                          "Phone: ${mInfoObj!.info.phone}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 2)),
-                        Text(
-                          "Address: ${mInfoObj!.info.address}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 2)),
-                        Text(
-                          "Github: ${mInfoObj!.info.github}",
+                          "This is my objective",
+                          textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 15,
                             color: Color(0xFF999999),
@@ -97,39 +123,26 @@ class _PersonalPageState extends State<PersonalPage>{
                         ),
                       ],
                     ),
+                    Divider(height: 32),
                   ],
-                ),
-                Divider(height: 32),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Career Objective',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF333333),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    Text(
-                      "This is my objective",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF999999),
-                      ),
-                    ),
-                  ],
-                ),
-                Divider(height: 32),
-              ],
+                )
             )
-          )
-        ],
-      ),
-    );
-  }
+          ],
+        ),
+      );
+  }else{
+      return Scaffold(
+        body: const Center(
+          child: Text('Loading...',
+              style: TextStyle(
+                color: Color(0xff172633),
+                fontSize: 20,
+              )
+          ),
+        ),
+      );
+    }
+    }
 }
 
 class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
@@ -248,7 +261,7 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
                       IconButton(
                         icon: Icon(
                           Icons.whatsapp,
-                          color: this.makeStickyHeaderTextColor(shrinkOffset, true),
+                          color: this.makeStickyHeaderTextColor(shrinkOffset, false),
                         ),
                         onPressed: () {},
                       ),
