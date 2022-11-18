@@ -16,7 +16,6 @@ class _EducationPageState extends State<EducationPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loading = true;
     fetchPersonalEducationModel().then((list) {
@@ -29,7 +28,8 @@ class _EducationPageState extends State<EducationPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    if(listEdu!=null)
+      return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -66,5 +66,11 @@ class _EducationPageState extends State<EducationPage> {
         ],
       ),
     );
+    else
+      return Scaffold(
+        appBar: AppBar(
+          title: Text("Loading..."),
+        ),
+      );
   }
 }
