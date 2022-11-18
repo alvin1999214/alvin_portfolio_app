@@ -89,6 +89,7 @@ class _EducationPageState extends State<EducationPage> {
                         ),
                         SizedBox(height: 10),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(mList.from,
                                 style: const TextStyle(
