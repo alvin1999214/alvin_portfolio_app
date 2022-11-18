@@ -52,14 +52,13 @@ Future<MobileConfig> fetchMobileConfig(
   }
 }
 
-Future<PersonalInfoModel> fetchPersonalInfoModel(BuildContext context) async{
+Future<PersonalInfoModel> fetchPersonalInfoModel() async{
 
   var response = await http.get(Uri.parse(personalInfoUrl),headers: headers);
 
   if(response.statusCode == 200) {
     return PersonalInfoModel.fromJson(jsonDecode(response.body));
   } else {
-    showAccessFailDialog(context);
     throw Exception('Failed to load');
   }
 }
