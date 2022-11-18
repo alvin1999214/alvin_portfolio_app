@@ -11,8 +11,8 @@ class EducationPage extends StatefulWidget {
 
 class _EducationPageState extends State<EducationPage> {
 
-  late List<PersonalEducationModel> listEdu;
-  late bool loading;
+  List<PersonalEducationModel>? listEdu;
+  bool? loading;
 
   @override
   void initState() {
@@ -29,15 +29,16 @@ class _EducationPageState extends State<EducationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      //backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text(loading? "loading":"Education Page"),
+        title: Text(loading! ? "loading":"Education Page"),
       ),
       body: Container(
         color: Colors.white,
         child: ListView.builder(
+            itemCount: listEdu == null? 0:listEdu?.length,
             itemBuilder: (context, index){
-              PersonalEducationModel mList = listEdu[index];
+              PersonalEducationModel mList = listEdu![index];
               return ListTile(
                 title: Text(mList.program),
                 subtitle: Text(mList.school),
