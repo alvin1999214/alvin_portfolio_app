@@ -1,3 +1,5 @@
+import 'package:alvin_portfolio_app/model/personal_education_model.dart';
+import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:flutter/material.dart';
 
 class EducationPage extends StatefulWidget {
@@ -8,22 +10,40 @@ class EducationPage extends StatefulWidget {
 }
 
 class _EducationPageState extends State<EducationPage> {
+
+  late List<PersonalEducationModel> listEdu;
+  late bool loading;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    loading = true;
+    fetchPersonalEducationModel().then((list) {
+      setState(() {
+        listEdu = list;
+        loading = false;
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text("Education Page"),
+        title: Text(loading? "loading":"Education Page"),
       ),
-      body: SafeArea(
-          child: Column(
-        children: [
-          Text(
-            'Edu Page',
-            style: TextStyle(color: Colors.blue, fontSize: 15),
-          )
-        ],
-      )),
+      body: Container(
+        color: Colors.white,
+        child: ListView.builder(
+            itemBuilder: (context, index){
+              PersonalEducationModel mList = listEdu[index];
+              return ListTile(
+                title: Text(mList.program),
+                subtitle: Text(mList.school),
+              );
+            }),
+      ),
     );
   }
 }

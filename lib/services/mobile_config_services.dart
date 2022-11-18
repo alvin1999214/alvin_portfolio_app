@@ -76,14 +76,14 @@ Future<PersonalExperienceModel> fetchPersonalExperienceModel(BuildContext contex
   }
 }
 
-Future<PersonalEducationModel> fetchPersonalEducationModel(BuildContext context) async{
+Future<List<PersonalEducationModel>> fetchPersonalEducationModel() async{
 
   var response = await http.get(Uri.parse(educationUrl),headers: headers);
 
   if(response.statusCode == 200) {
-    return PersonalEducationModel.fromJson(jsonDecode(response.body));
+    final List<PersonalEducationModel> listEdu = personalEducationModelFromJson(response.body);
+    return listEdu;
   } else {
-    showAccessFailDialog(context);
     throw Exception('Failed to load');
   }
 }
