@@ -1,4 +1,6 @@
 class StringValue {
+
+  // API Link
   static const String mobileConfigApi =
       "https://api.github.com/repos/alvin1999214/personal_profile/contents/mobile_config.json";
   static const String personalInfoApi =
@@ -7,4 +9,11 @@ class StringValue {
       "https://api.github.com/repos/alvin1999214/personal_profile/contents/json/personal_experience.json";
   static const String educationApi =
       "https://api.github.com/repos/alvin1999214/personal_profile/contents/json/personal_education.json";
+
+  // Color Value
+  static const String backgroundColorGray = "0xffF5F7F9";
+  static const String backgroundColorWhite = "0xffFFFFFF";
+  static const String textColorHeader = "0xff172633";
+  static const String textColorTitle = "0xff454F57";
+  static const String textColorSubTitle = "0xff9BA4AB";
 }

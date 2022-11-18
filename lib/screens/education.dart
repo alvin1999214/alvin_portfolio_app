@@ -12,7 +12,7 @@ class EducationPage extends StatefulWidget {
 class _EducationPageState extends State<EducationPage> {
   List<PersonalEducationModel>? listEdu;
   bool? loading;
-  final String title = "Education Page";
+  final String title = "Education";
 
   @override
   void initState() {
@@ -120,8 +120,13 @@ class _EducationPageState extends State<EducationPage> {
       );
     } else {
       return Scaffold(
-        appBar: AppBar(
-          title: Text("Loading..."),
+        body: const Center(
+          child: Text('Loading...',
+              style: TextStyle(
+                color: Color(0xff172633),
+                fontSize: 20,
+              )
+          ),
         ),
       );
     }
