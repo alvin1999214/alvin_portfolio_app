@@ -64,14 +64,14 @@ Future<PersonalInfoModel> fetchPersonalInfoModel(BuildContext context) async{
   }
 }
 
-Future<PersonalExperienceModel> fetchPersonalExperienceModel(BuildContext context) async{
+Future<List<PersonalExperienceModel>> fetchPersonalExperienceModel() async{
 
   var response = await http.get(Uri.parse(experienceUrl),headers: headers);
 
   if(response.statusCode == 200) {
-    return PersonalExperienceModel.fromJson(jsonDecode(response.body));
+    final List<PersonalExperienceModel> listWork = personalExperienceModelFromJson(response.body);
+    return listWork;
   } else {
-    showAccessFailDialog(context);
     throw Exception('Failed to load');
   }
 }
