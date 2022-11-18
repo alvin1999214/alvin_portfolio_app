@@ -1,3 +1,4 @@
+import 'package:alvin_portfolio_app/model/personal_info_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,19 +9,24 @@ class PersonalPage extends StatefulWidget {
   @override
   State<PersonalPage> createState() => _PersonalPageState();
 
+}
+
+class _PersonalPageState extends State<PersonalPage>{
+  PersonalInfoModel? mInfoObj;
+  bool? loading;
+
   @override
   void initState() {
-    // super.initState();
-    // loading = true;
-    // fetchPersonalEducationModel().then((list) {
-    //   setState(() {
-    //     listEdu = list;
-    //     loading = false;
-    //   });
-    // });
+    super.initState();
+    loading = true;
+    fetchPersonalInfoModel().then((obj) {
+      setState(() {
+        mInfoObj = obj;
+        loading = false;
+      });
+    });
   }
-}
-class _PersonalPageState extends State<PersonalPage>{
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +35,7 @@ class _PersonalPageState extends State<PersonalPage>{
           SliverPersistentHeader(
             pinned: true,
             delegate: SliverCustomHeaderDelegate(
-                title: 'Alvin Lau',
+                title: "Personal Information",
                 collapsedHeight: 40,
                 expandedHeight: 300,
                 paddingTop: MediaQuery.of(context).padding.top,
@@ -37,89 +43,87 @@ class _PersonalPageState extends State<PersonalPage>{
             ),
           ),
           SliverFillRemaining(
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
-                        child: Image.network(
-                          'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png',
-                          width: 130,
-                          height: 180,
-                          fit: BoxFit.cover,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 10),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: Image.network(
+                        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png',
+                        width: 130,
+                        height: 180,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(left: 16)),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          mInfoObj!.info.name,
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF333333),
+                          ),
                         ),
-                      ),
-                      Padding(padding: EdgeInsets.only(left: 16)),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Alvin Lau',
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF333333),
-                            ),
+                        Padding(padding: EdgeInsets.only(top: 10)),
+                        Text(
+                          "Phone: ${mInfoObj!.info.phone}",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF999999),
                           ),
-                          Padding(padding: EdgeInsets.only(top: 10)),
-                          Text(
-                            'Phone: 9123 4567',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Color(0xFF999999),
-                            ),
-                          ),
-                          Padding(padding: EdgeInsets.only(top: 2)),
-                          Text(
-                            'Address: Hong Kong',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Color(0xFF999999),
-                            ),
-                          ),
-                          Padding(padding: EdgeInsets.only(top: 2)),
-                          Text(
-                            'Github: alvin1999214',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Color(0xFF999999),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Divider(height: 32),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Career Objective',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF333333),
                         ),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      Text(
-                        "This is my objective",
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Color(0xFF999999),
+                        Padding(padding: EdgeInsets.only(top: 2)),
+                        Text(
+                          "Address: ${mInfoObj!.info.address}",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF999999),
+                          ),
                         ),
+                        Padding(padding: EdgeInsets.only(top: 2)),
+                        Text(
+                          "Github: ${mInfoObj!.info.github}",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF999999),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Divider(height: 32),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Career Objective',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF333333),
                       ),
-                    ],
-                  ),
-                  Divider(height: 32),
-                ],
-              ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10)),
+                    Text(
+                      "This is my objective",
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Color(0xFF999999),
+                      ),
+                    ),
+                  ],
+                ),
+                Divider(height: 32),
+              ],
             )
           )
         ],

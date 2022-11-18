@@ -1,72 +1,57 @@
-class PersonalInfoModel{
-  Info info;
-  Language language;
-  String objective;
+// To parse this JSON data, do
+//
+//     final personalInfoModel = personalInfoModelFromJson(jsonString);
 
+import 'dart:convert';
+
+PersonalInfoModel personalInfoModelFromJson(String str) => PersonalInfoModel.fromJson(json.decode(str));
+
+String personalInfoModelToJson(PersonalInfoModel data) => json.encode(data.toJson());
+
+class PersonalInfoModel {
   PersonalInfoModel({
     required this.info,
-    required this.language,
-    required this.objective
-
+    required this.careerObjective,
   });
 
-  factory PersonalInfoModel.fromJson(Map<String, dynamic> json){
-    return PersonalInfoModel(
-      info: Info.fromJson(json['info']),
-        language: Language.fromJson(json['language']),
-        objective: json['career_objective']
-    );
-  }
+  Info info;
+  String careerObjective;
+
+  factory PersonalInfoModel.fromJson(Map<String, dynamic> json) => PersonalInfoModel(
+    info: Info.fromJson(json["info"]),
+    careerObjective: json["career_objective"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "info": info.toJson(),
+    "career_objective": careerObjective,
+  };
 }
 
-class Info{
+class Info {
+  Info({
+    required this.name,
+    required this.phone,
+    required this.address,
+    required this.github,
+  });
+
   String name;
   String phone;
   String address;
   String github;
 
-  Info({
-    required this.name,
-    required this.phone,
-    required this.address,
-    required this.github
-  });
+  factory Info.fromJson(Map<String, dynamic> json) => Info(
+    name: json["name"],
+    phone: json["phone"],
+    address: json["address"],
+    github: json["github"],
+  );
 
-  factory Info.fromJson(Map<String, dynamic> json){
-    return Info(
-      name: json['name'],
-      phone: json['phone'],
-      address: json['address'],
-      github: json['github'],
-    );
-  }
-}
-
-class Language{
-  Skill skill;
-  
-  Language({
-    required this.skill
-  });
-  
-  factory Language.fromJson(Map<String, dynamic> json){
-    return Language(skill: json['skill']);
-  }
-}
-
-class Skill{
-  String name;
-  String rating;
-
-  Skill({
-    required this.name,
-    required this.rating
-  });
-  
-  factory Skill.fromJson(Map<String, dynamic> json){
-    return Skill(
-      name: json['name'],
-      rating: json['rating'],
-    );
-  }
+  Map<String, dynamic> toJson() => {
+    "name": name,
+    "phone": phone,
+    "address": address,
+    "github": github,
+  };
 }
