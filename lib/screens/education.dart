@@ -39,7 +39,7 @@ class _EducationPageState extends State<EducationPage> {
               expandedHeight: 250,
               elevation: 0,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text(this.title,style: TextStyle(color: Colors.black),),
+                title: Text(this.title,style: TextStyle(color: Color(0xff172633)),),
                 background: Image.network(
                   'https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/invest%20-education.jpg',
                   fit: BoxFit.cover,
