@@ -10,9 +10,9 @@ class EducationPage extends StatefulWidget {
 }
 
 class _EducationPageState extends State<EducationPage> {
-
   List<PersonalEducationModel>? listEdu;
   bool? loading;
+  final String title = "Education Page";
 
   @override
   void initState() {
@@ -26,24 +26,44 @@ class _EducationPageState extends State<EducationPage> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: Text(loading! ? "loading":"Education Page"),
-      ),
-      body: Container(
-        color: Colors.white,
-        child: ListView.builder(
-            itemCount: listEdu == null? 0:listEdu?.length,
-            itemBuilder: (context, index){
-              PersonalEducationModel mList = listEdu![index];
-              return ListTile(
-                title: Text(mList.program),
-                subtitle: Text(mList.school),
-              );
-            }),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 250,
+            elevation: 0,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(this.title),
+              background: Image.network(
+                'http://img1.mukewang.com/5c18cf540001ac8206000338.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          SliverFixedExtentList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                PersonalEducationModel mList = listEdu![index];
+                return Container(
+                  height: 150,
+                  color: Colors.white,
+                  child: Center(
+                    child: ListTile(
+                      title: Text(mList.program),
+                      subtitle: Text(mList.school),
+                    ),
+                  ),
+                );
+              },
+              childCount: listEdu!.length,
+            ),
+            itemExtent: 300,
+          ),
+        ],
       ),
     );
   }
