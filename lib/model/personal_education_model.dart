@@ -14,18 +14,24 @@ class PersonalEducationModel {
     required this.school,
     required this.from,
     required this.to,
+    required this.action,
+    required this.image
   });
 
   String program;
   String school;
   String from;
   String to;
+  String action;
+  String image;
 
   factory PersonalEducationModel.fromJson(Map<String, dynamic> json) => PersonalEducationModel(
     program: json["program"],
     school: json["school"],
     from: json["from"],
     to: json["to"],
+    action: json["action"],
+    image: json["image"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -33,5 +39,7 @@ class PersonalEducationModel {
     "school": school,
     "from": from,
     "to": to,
+    "action": action,
+    "image": image,
   };
 }

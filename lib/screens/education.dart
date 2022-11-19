@@ -1,6 +1,7 @@
 import 'package:alvin_portfolio_app/model/personal_education_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EducationPage extends StatefulWidget {
   const EducationPage({Key? educationPageKey}) : super(key: educationPageKey);
@@ -50,66 +51,78 @@ class _EducationPageState extends State<EducationPage> {
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
                   PersonalEducationModel mList = listEdu![index];
-                  return Container(
-                    padding: const EdgeInsets.all(20),
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 16.0, horizontal: 24.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(8.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        )
-                      ]
-                    ),
-                    child: Column(
-                      children: [
-                        Image.network('https://www.cuhk.edu.hk/english/images/college/cw-chu.jpg'),
-                        SizedBox(height: 10),
-                        Text(
-                          mList.program,
-                          style: const TextStyle(
-                            color: Color(0xff454F57),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                  _launchUrl() async {
+                    if (await canLaunch(mList.action)) {
+                      await launch(mList.action);
+                    } else {
+                      throw "Could not open $mList.action";
+                    }
+                  }
+                  return InkWell(
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 16.0, horizontal: 24.0),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
+                            )
+                          ]
+                      ),
+                      child: Column(
+                        children: [
+                          Image.network(mList.image,headers: getTokenHeaders(),),
+                          SizedBox(height: 10),
+                          Text(
+                            mList.program,
+                            style: const TextStyle(
+                              color: Color(0xff454F57),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          mList.school,
-                          style: const TextStyle(
-                              color: Color(0xff9BA4AB), fontSize: 12),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(mList.from,
-                                style: const TextStyle(
-                                    color: Color(0xff9BA4AB), fontSize: 12)),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text("to",
-                                style: const TextStyle(
-                                    color: Color(0xff9BA4AB), fontSize: 12)),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(mList.to,
-                                style: const TextStyle(
-                                    color: Color(0xff9BA4AB), fontSize: 12))
-                          ],
-                        )
-                      ],
+                          SizedBox(height: 10),
+                          Text(
+                            mList.school,
+                            style: const TextStyle(
+                                color: Color(0xff9BA4AB), fontSize: 12),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(mList.from,
+                                  style: const TextStyle(
+                                      color: Color(0xff9BA4AB), fontSize: 12)),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text("to",
+                                  style: const TextStyle(
+                                      color: Color(0xff9BA4AB), fontSize: 12)),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(mList.to,
+                                  style: const TextStyle(
+                                      color: Color(0xff9BA4AB), fontSize: 12))
+                            ],
+                          )
+                        ],
+                      ),
                     ),
+                    onTap: (){
+                      _launchUrl();
+                    },
                   );
                 },
                 childCount: listEdu!.length,
