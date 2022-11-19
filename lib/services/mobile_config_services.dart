@@ -17,9 +17,12 @@ const mobileConfigUrl = StringValue.mobileConfigApi;
 const personalInfoUrl = StringValue.personalInfoApi;
 const experienceUrl = StringValue.experienceApi;
 const educationUrl = StringValue.educationApi;
+const profileBgImg = StringValue.profileBgImg;
+const profileImg = StringValue.profileImg;
 
 late String accessToken;
 late var headers;
+late var imgHeaders;
 
 Future<MobileConfig> fetchMobileConfig(
     String mToken, BuildContext context) async {
@@ -85,4 +88,8 @@ Future<List<PersonalEducationModel>> fetchPersonalEducationModel() async{
   } else {
     throw Exception('Failed to load');
   }
+}
+
+getTokenHeaders(){
+  return headers;
 }

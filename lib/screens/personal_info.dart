@@ -1,5 +1,6 @@
 import 'package:alvin_portfolio_app/model/personal_info_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
+import 'package:alvin_portfolio_app/values/configure.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -40,7 +41,7 @@ class _PersonalPageState extends State<PersonalPage> {
                   expandedHeight: 300,
                   paddingTop: MediaQuery.of(context).padding.top,
                   coverImgUrl:
-                      'https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg'),
+                      StringValue.profileBgImg),
             ),
             SliverFillRemaining(
                 child: Column(
@@ -53,7 +54,8 @@ class _PersonalPageState extends State<PersonalPage> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: Image.network(
-                        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png',
+                        StringValue.profileImg,
+                        headers: getTokenHeaders(),
                         width: 130,
                         height: 180,
                         fit: BoxFit.cover,
@@ -213,7 +215,7 @@ class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Container(child: Image.network(this.coverImgUrl, fit: BoxFit.cover)),
+          Container(child: Image.network(this.coverImgUrl, headers: getTokenHeaders(), fit: BoxFit.cover)),
           Positioned(
             left: 0,
             top: this.maxExtent / 2,
