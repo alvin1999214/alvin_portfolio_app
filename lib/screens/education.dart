@@ -51,11 +51,10 @@ class _EducationPageState extends State<EducationPage> {
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
                   PersonalEducationModel mList = listEdu![index];
+                  Uri _url = Uri.parse(mList.action);
                   _launchUrl() async {
-                    if (await canLaunch(mList.action)) {
-                      await launch(mList.action);
-                    } else {
-                      throw "Could not open $mList.action";
+                    if (!await launchUrl(_url)) {
+                      throw 'Could not launch $_url';
                     }
                   }
                   return InkWell(
