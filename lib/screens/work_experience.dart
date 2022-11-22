@@ -68,7 +68,7 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
                     ),
                     child: Column(
                       children: [
-                      Image.network(mList.image,headers: getTokenHeaders(),),
+                        Image.network('https://www.jobstreet.com.ph/career-resources/wp-content/uploads/sites/3/2014/07/Is-the-Company-Youre-Working-for-Stable.jpg'),
                         SizedBox(height: 10),
                         Text(
                           mList.position,

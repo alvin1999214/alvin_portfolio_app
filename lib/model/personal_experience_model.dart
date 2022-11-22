@@ -17,8 +17,6 @@ class PersonalExperienceModel {
     required this.responsibility,
     required this.programLauguage,
     required this.software,
-    required this.action,
-    required this.image,
   });
 
   String companyName;
@@ -28,8 +26,6 @@ class PersonalExperienceModel {
   String responsibility;
   String programLauguage;
   String software;
-  String action;
-  String image;
 
   factory PersonalExperienceModel.fromJson(Map<String, dynamic> json) => PersonalExperienceModel(
     companyName: json["company_name"],
@@ -39,8 +35,6 @@ class PersonalExperienceModel {
     responsibility: json["responsibility"],
     programLauguage: json["program_lauguage"],
     software: json["software"],
-    action: json["action"],
-    image: json["image"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -51,7 +45,5 @@ class PersonalExperienceModel {
     "responsibility": responsibility,
     "program_lauguage": programLauguage,
     "software": software,
-    "action": action,
-    "image": image,
   };
 }
