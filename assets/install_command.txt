@@ -1,0 +1,17 @@
+#install cocoapods in m1 macbook
+1. install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+2. brew install
+brew install cocoapods
+
+
+#after install cocoapods v.1.11.x
+#open terminal in project
+1. cd ios
+2. arch -x86_64 pod install
+3. cd ..
+4. flutter run
+
+#install in x86_64
+arch -x86_64 sudo xxxxxx
