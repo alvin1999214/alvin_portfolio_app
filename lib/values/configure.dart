@@ -9,6 +9,8 @@ class StringValue {
       "https://api.github.com/repos/alvin1999214/personal_profile/contents/json/personal_experience.json";
   static const String educationApi =
       "https://api.github.com/repos/alvin1999214/personal_profile/contents/json/personal_education.json";
+  static const String languageSkillApi =
+      "https://api.github.com/repos/alvin1999214/personal_profile/contents/json/language_skill.json";
   static const String profileImg = "https://api.github.com/repos/alvin1999214/personal_profile/contents/assets/profile.jpg";
   static const String profileBgImg = "https://api.github.com/repos/alvin1999214/personal_profile/contents/assets/bg.jpg";
 
