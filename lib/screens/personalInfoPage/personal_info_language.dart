@@ -1,6 +1,5 @@
 import 'package:alvin_portfolio_app/model/language_skill_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInfoLanguage extends StatefulWidget {

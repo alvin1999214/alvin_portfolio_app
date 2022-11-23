@@ -1,7 +1,6 @@
 import 'package:alvin_portfolio_app/model/personal_info_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:alvin_portfolio_app/values/configure.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInfoDetails extends StatefulWidget {
