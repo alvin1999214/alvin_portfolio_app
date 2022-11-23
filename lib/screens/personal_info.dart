@@ -1,23 +1,31 @@
+import 'dart:math';
 import 'package:alvin_portfolio_app/model/personal_info_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:alvin_portfolio_app/values/configure.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-class PersonalPage extends StatefulWidget {
-  const PersonalPage({Key? PersonalPageKey}) : super(key: PersonalPageKey);
+class PersonalInfoPage extends StatefulWidget {
+
+  const PersonalInfoPage({Key? homePageKey}) : super(key: homePageKey);
 
   @override
-  State<PersonalPage> createState() => _PersonalPageState();
+  _PersonalInfoPage createState() => _PersonalInfoPage();
 }
 
-class _PersonalPageState extends State<PersonalPage> {
-  PersonalInfoModel? mInfoObj;
+class _PersonalInfoPage extends State<PersonalInfoPage>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
   bool? loading;
+  PersonalInfoModel? mInfoObj;
 
   @override
   void initState() {
     super.initState();
+    this.tabController = TabController(
+        length: 2,
+        vsync: this,
+
+    );
     loading = true;
     fetchPersonalInfoModel().then((obj) {
       setState(() {
@@ -33,100 +41,122 @@ class _PersonalPageState extends State<PersonalPage> {
       return Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
+            SliverAppBar(
+              pinned: true,
+              elevation: 0,
+              expandedHeight: 250,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text("TITLE"),
+                background: Image.network(
+                  'http://img1.mukewang.com/5c18cf540001ac8206000338.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             SliverPersistentHeader(
               pinned: true,
-              delegate: SliverCustomHeaderDelegate(
-                  title: "Personal Information",
-                  collapsedHeight: 40,
-                  expandedHeight: 300,
-                  paddingTop: MediaQuery.of(context).padding.top,
-                  coverImgUrl:
-                      Configure.profileBgImg),
+              delegate: StickyTabBarDelegate(
+                child: TabBar(
+                  labelColor: Colors.black,
+                  controller: this.tabController,
+                  tabs: <Widget>[
+                    Tab(text: 'Home'),
+                    Tab(text: 'Profile'),
+                  ],
+                ),
+              ),
             ),
             SliverFillRemaining(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(height: 10),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: Image.network(
-                        Configure.profileImg,
-                        headers: getTokenHeaders(),
-                        width: 130,
-                        height: 180,
-                        fit: BoxFit.cover,
+              child: TabBarView(
+                controller: this.tabController,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(height: 10),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: Image.network(
+                              Configure.profileImg,
+                              headers: getTokenHeaders(),
+                              width: 130,
+                              height: 180,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.only(left: 16)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                mInfoObj!.info.name,
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF333333),
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(top: 10)),
+                              Text(
+                                "Phone: ${mInfoObj!.info.phone}",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF999999),
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(top: 2)),
+                              Text(
+                                "Address: ${mInfoObj!.info.address}",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF999999),
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(top: 2)),
+                              Text(
+                                "Github: ${mInfoObj!.info.github}",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF999999),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ),
-                    Padding(padding: EdgeInsets.only(left: 16)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          mInfoObj!.info.name,
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF333333),
+                      Divider(height: 32),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            'Career Objective',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF333333),
+                            ),
                           ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 10)),
-                        Text(
-                          "Phone: ${mInfoObj!.info.phone}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Text(
+                            mInfoObj!.careerObjective,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Color(0xFF999999),
+                            ),
                           ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 2)),
-                        Text(
-                          "Address: ${mInfoObj!.info.address}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 2)),
-                        Text(
-                          "Github: ${mInfoObj!.info.github}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Divider(height: 32),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Career Objective',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF333333),
+                        ],
                       ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    Text(
-                      mInfoObj!.careerObjective,
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF999999),
-                      ),
-                    ),
-                  ],
-                ),
-                Divider(height: 32),
-              ],
-            ))
+                      Divider(height: 32),
+                    ],
+                  ),
+                  Center(child: Text('Content of Profile')),
+                ],
+              ),
+            ),
           ],
         ),
       );
@@ -137,149 +167,36 @@ class _PersonalPageState extends State<PersonalPage> {
               style: TextStyle(
                 color: Color(0xff172633),
                 fontSize: 20,
-              )),
+              )
+          ),
         ),
       );
     }
   }
 }
 
-class SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
-  final double collapsedHeight;
-  final double expandedHeight;
-  final double paddingTop;
-  final String coverImgUrl;
-  final String title;
-  String statusBarMode = 'dark';
+class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
+  final TabBar child;
 
-  SliverCustomHeaderDelegate({
-    required this.collapsedHeight,
-    required this.expandedHeight,
-    required this.paddingTop,
-    required this.coverImgUrl,
-    required this.title,
-  });
+  StickyTabBarDelegate({required this.child});
 
   @override
-  double get minExtent => this.collapsedHeight + this.paddingTop;
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    //return this.child;
+    return new Container(
+      color: Colors.white,
+      child: this.child,
+    );
+  }
 
   @override
-  double get maxExtent => this.expandedHeight;
+  double get maxExtent => this.child.preferredSize.height;
+
+  @override
+  double get minExtent => this.child.preferredSize.height;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
     return true;
-  }
-
-  void updateStatusBarBrightness(shrinkOffset) {
-    if (shrinkOffset > 50 && this.statusBarMode == 'dark') {
-      this.statusBarMode = 'light';
-      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.light,
-      ));
-    } else if (shrinkOffset <= 50 && this.statusBarMode == 'light') {
-      this.statusBarMode = 'dark';
-      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-      ));
-    }
-  }
-
-  Color makeStickyHeaderBgColor(shrinkOffset) {
-    final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
-        .clamp(0, 255)
-        .toInt();
-    return Color.fromARGB(alpha, 255, 255, 255);
-  }
-
-  Color makeStickyHeaderTextColor(shrinkOffset, isIcon) {
-    if (shrinkOffset <= 50) {
-      return isIcon ? Colors.white : Colors.transparent;
-    } else {
-      final int alpha = (shrinkOffset / (this.maxExtent - this.minExtent) * 255)
-          .clamp(0, 255)
-          .toInt();
-      return Color.fromARGB(alpha, 0, 0, 0);
-    }
-  }
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    this.updateStatusBarBrightness(shrinkOffset);
-    return Container(
-      height: this.maxExtent,
-      width: MediaQuery.of(context).size.width,
-      child: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Container(child: Image.network(this.coverImgUrl, headers: getTokenHeaders(), fit: BoxFit.cover)),
-          Positioned(
-            left: 0,
-            top: this.maxExtent / 2,
-            right: 0,
-            bottom: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0x00000000),
-                    Color(0x90000000),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            right: 0,
-            top: 0,
-            child: Container(
-              color: this.makeStickyHeaderBgColor(shrinkOffset),
-              child: SafeArea(
-                bottom: false,
-                child: Container(
-                  height: this.collapsedHeight,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      IconButton(
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          color: this
-                              .makeStickyHeaderTextColor(shrinkOffset, true),
-                        ),
-                        onPressed: () => Navigator.pop(context),
-                      ),
-                      Text(
-                        this.title,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: this
-                              .makeStickyHeaderTextColor(shrinkOffset, false),
-                        ),
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.whatsapp,
-                          color: this
-                              .makeStickyHeaderTextColor(shrinkOffset, false),
-                        ),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }
