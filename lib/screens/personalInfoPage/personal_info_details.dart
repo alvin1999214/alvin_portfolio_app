@@ -26,29 +26,71 @@ class _PersonalInfoDetailsState extends State<PersonalInfoDetails> {
   Widget build(BuildContext context) {
     if (mInfoObj != null) {
       return Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 10),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+        body: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: Image.network(
-                    Configure.profileImg,
-                    headers: getTokenHeaders(),
-                    width: 130,
-                    height: 180,
-                    fit: BoxFit.cover,
-                  ),
+                SizedBox(height: 10),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: Image.network(
+                        Configure.profileImg,
+                        headers: getTokenHeaders(),
+                        width: 130,
+                        height: 180,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(left: 16)),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          mInfoObj!.info.name,
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF333333),
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10)),
+                        Text(
+                          "Phone: ${mInfoObj!.info.phone}",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF999999),
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 2)),
+                        Text(
+                          "Address: ${mInfoObj!.info.address}",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF999999),
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 2)),
+                        Text(
+                          "Github: ${mInfoObj!.info.github}",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF999999),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                Padding(padding: EdgeInsets.only(left: 16)),
+                Divider(height: 32),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      mInfoObj!.info.name,
+                      'Career Objective',
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
@@ -57,23 +99,8 @@ class _PersonalInfoDetailsState extends State<PersonalInfoDetails> {
                     ),
                     Padding(padding: EdgeInsets.only(top: 10)),
                     Text(
-                      "Phone: ${mInfoObj!.info.phone}",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF999999),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 2)),
-                    Text(
-                      "Address: ${mInfoObj!.info.address}",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF999999),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 2)),
-                    Text(
-                      "Github: ${mInfoObj!.info.github}",
+                      mInfoObj!.careerObjective,
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
                         fontSize: 15,
                         color: Color(0xFF999999),
@@ -81,34 +108,11 @@ class _PersonalInfoDetailsState extends State<PersonalInfoDetails> {
                     ),
                   ],
                 ),
+                Divider(height: 32),
               ],
             ),
-            Divider(height: 32),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'Career Objective',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF333333),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 10)),
-                Text(
-                  mInfoObj!.careerObjective,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Color(0xFF999999),
-                  ),
-                ),
-              ],
-            ),
-            Divider(height: 32),
-          ],
-        ),
+          ),
+        )
       );
     } else {
       return Scaffold(
