@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     PersonalInfoPage(),
     WorkExperiencePage(),
     EducationPage(),
-    MyProjectPage(),
+    //MyProjectPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -34,6 +34,9 @@ class _HomePageState extends State<HomePage> {
         child: screen.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xff172633),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Color(0xff9BA4AB),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -50,11 +53,11 @@ class _HomePageState extends State<HomePage> {
             label: 'Education',
             backgroundColor: Color(0xff172633),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.smartphone_outlined),
-            label: 'MY Project',
-            backgroundColor: Color(0xff172633),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.smartphone_outlined),
+          //   label: 'MY Project',
+          //   backgroundColor: Color(0xff172633),
+          // ),
         ],
         currentIndex: _selectedIndex,
         //selectedItemColor: Colors.black,
