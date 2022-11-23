@@ -1,7 +1,8 @@
+import 'package:alvin_portfolio_app/screens/workExperiencePage/work_experience_details.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:flutter/material.dart';
 
-import '../model/personal_experience_model.dart';
+import '../../model/personal_experience_model.dart';
 
 class WorkExperiencePage extends StatefulWidget {
   const WorkExperiencePage({Key? workExperiencePageKey})
@@ -111,7 +112,9 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
                         ],
                       ),
                     ),
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=> WorkExperienceDetails(workDetail: mList)));
+                    },
                   );
                 },
                 childCount: listWork!.length,
