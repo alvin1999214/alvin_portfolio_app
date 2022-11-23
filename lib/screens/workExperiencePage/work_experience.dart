@@ -37,13 +37,13 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Color(0xff172633),
               pinned: true,
               expandedHeight: 250,
               elevation: 0,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text(this.title,style: TextStyle(color: Color(0xff172633)),),
-                background: Image(image: AssetImage('work.jpg'),),
+                title: Text(this.title,style: TextStyle(color: Colors.white),),
+                background: Image(image: AssetImage('work.jpg'),fit: BoxFit.cover,),
               ),
             ),
             SliverList(
