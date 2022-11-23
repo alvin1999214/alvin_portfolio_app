@@ -5,11 +5,8 @@ import 'package:alvin_portfolio_app/model/language_skill_model.dart';
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
 import 'package:alvin_portfolio_app/model/personal_education_model.dart';
 import 'package:alvin_portfolio_app/model/personal_experience_model.dart';
-import 'package:alvin_portfolio_app/screens/home_page.dart';
 import 'package:alvin_portfolio_app/values/configure.dart';
-import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
 import 'package:alvin_portfolio_app/widget/rsa.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import '../model/personal_info_model.dart';
@@ -26,8 +23,7 @@ late String accessToken;
 late var headers;
 late var imgHeaders;
 
-Future<MobileConfig> fetchMobileConfig(
-    String mToken, BuildContext context) async {
+Future fetchMobileConfig(String mToken) async {
 
   String decryptedToken = await rsaDecrypt(mToken);
   accessToken=decryptedToken;
@@ -43,17 +39,15 @@ Future<MobileConfig> fetchMobileConfig(
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomePage(),
-        ));
-    return MobileConfig.fromJson(jsonDecode(response.body));
+
+    //return MobileConfig.fromJson(jsonDecode(response.body));
+    return true;
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    showAccessFailDialog(context);
-    throw Exception('Failed to load');
+
+    //throw Exception('Failed to load');
+    return false;
   }
 }
 
