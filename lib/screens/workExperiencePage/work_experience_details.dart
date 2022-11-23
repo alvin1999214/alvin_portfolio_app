@@ -1,6 +1,8 @@
 import 'package:alvin_portfolio_app/model/personal_experience_model.dart';
 import 'package:flutter/material.dart';
 
+import '../../services/mobile_config_services.dart';
+
 class WorkExperienceDetails extends StatefulWidget {
   const WorkExperienceDetails({super.key, required this.workDetail});
 
@@ -18,34 +20,61 @@ class _WorkExperienceDetails extends State<WorkExperienceDetails> {
           title: Text("Job Details"),
           backgroundColor: Color(0xff172633),
         ),
-        body: Container(
+        body: SingleChildScrollView(
+          child: Container(
             // distant between content and edge
-            padding: const EdgeInsets.all(20),
-            // match parent of card
-            width: double.infinity,
-            // distant between card and parent
-            margin:
-                const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(8.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 7,
-                    offset: Offset(0, 3),
-                  )
-                ]),
-            child: Column(
-              // Align Column to left by "CrossAxisAlignment.start"
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(widget.workDetail.position),
-                Text(widget.workDetail.companyName),
-              ],
-            )
+              padding: const EdgeInsets.all(20),
+              // match parent of card
+              width: double.infinity,
+              // distant between card and parent
+              margin:
+              const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(8.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 7,
+                      offset: Offset(0, 3),
+                    )
+                  ]),
+              child: Column(
+                // Align Column to left by "CrossAxisAlignment.start"
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // Warp content of card
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.network(widget.workDetail.image,headers: getTokenHeaders(),),
+                  Divider(height: 12),
+                  Text("Position: "),
+                  SizedBox(height: 5),
+                  Text(widget.workDetail.position),
+                  SizedBox(height: 15),
+                  Text("Company: "),
+                  SizedBox(height: 5),
+                  Text(widget.workDetail.companyName),
+                  Divider(height: 12),
+                  Text("Responsibility: "),
+                  SizedBox(height: 5),
+                  Text(widget.workDetail.responsibility),
+                  Divider(height: 12),
+                  Text("Programming Language:"),
+                  SizedBox(height: 5),
+                  Text(widget.workDetail.programLauguage),
+                  Divider(height: 12),
+                  Text("Skills Using: "),
+                  SizedBox(height: 5),
+                  Text(widget.workDetail.software),
+                  Divider(height: 12),
+                  Text("Company Website: "),
+                  SizedBox(height: 5),
+                  Text(widget.workDetail.action)
+                ],
+              )
+          ),
         )
     );
   }
