@@ -17,6 +17,7 @@ class _PersonalInfoPage extends State<PersonalInfoPage>
   late TabController tabController;
   bool? loading;
   PersonalInfoModel? mInfoObj;
+  final String title = "Personal Information";
 
   @override
   void initState() {
@@ -46,9 +47,10 @@ class _PersonalInfoPage extends State<PersonalInfoPage>
               elevation: 0,
               expandedHeight: 250,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text("TITLE"),
+                title: Text(title),
                 background: Image.network(
-                  'http://img1.mukewang.com/5c18cf540001ac8206000338.jpg',
+                  Configure.profileBgImg,
+                  headers: getTokenHeaders(),
                   fit: BoxFit.cover,
                 ),
               ),
