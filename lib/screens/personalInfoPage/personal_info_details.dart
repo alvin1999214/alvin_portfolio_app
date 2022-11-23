@@ -5,9 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInfoDetails extends StatefulWidget {
-  const PersonalInfoDetails({Key? personalInfoDetailsKey})
-      : super(key: personalInfoDetailsKey);
-
   @override
   State<PersonalInfoDetails> createState() => _PersonalInfoDetailsState();
 }
