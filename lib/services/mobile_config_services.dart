@@ -92,12 +92,13 @@ Future<List<PersonalEducationModel>> fetchPersonalEducationModel() async{
   }
 }
 
-Future<LanguageSkillModel> fetchLanguageSkillModel() async{
+Future<List<LanguageSkillModel>> fetchLanguageSkillModel() async{
 
   var response = await http.get(Uri.parse(languageSkillUrl),headers: headers);
 
   if(response.statusCode == 200) {
-    return LanguageSkillModel.fromJson(jsonDecode(response.body));
+    final List<LanguageSkillModel> listLanguageSkill = languageSkillModelFromJson(response.body);
+    return listLanguageSkill;
   } else {
     throw Exception('Failed to load');
   }
