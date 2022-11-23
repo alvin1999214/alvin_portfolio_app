@@ -1,5 +1,6 @@
 import 'package:alvin_portfolio_app/model/personal_experience_model.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../services/mobile_config_services.dart';
 
@@ -15,6 +16,12 @@ class WorkExperienceDetails extends StatefulWidget {
 class _WorkExperienceDetails extends State<WorkExperienceDetails> {
   @override
   Widget build(BuildContext context) {
+    Uri _url = Uri.parse(widget.workDetail.action);
+    _launchUrl() async {
+      if (!await launchUrl(_url)) {
+        throw 'Could not launch $_url';
+      }
+    }
     return Scaffold(
         appBar: AppBar(
           title: Text("Job Details"),
@@ -71,7 +78,23 @@ class _WorkExperienceDetails extends State<WorkExperienceDetails> {
                   Divider(height: 12),
                   Text("Company Website: "),
                   SizedBox(height: 5),
-                  Text(widget.workDetail.action)
+                  Text(widget.workDetail.action),
+                  Divider(height: 12),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Color(0xff172633),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: TextButton(
+                      onPressed: () {
+                        _launchUrl();
+                      },
+                      child: Text(
+                        'Visit Website',
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
+                    ),
+                  )
                 ],
               )
           ),
