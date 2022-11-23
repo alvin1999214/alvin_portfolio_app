@@ -33,6 +33,7 @@ class _LandingPageState extends State<LandingPage> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text("Login Page"),
+        backgroundColor: Color(0xff172633),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -68,9 +69,17 @@ class _LandingPageState extends State<LandingPage> {
               child: TextField(
                 controller: accessKeyController,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xff172633)
+                      )
+                    ),
                     labelText: 'Access Key',
+                    labelStyle: TextStyle(
+                      color: Color(0xff172633)
+                    ),
                     hintText: ''),
+                cursorColor: Color(0xff172633),
               ),
             ),
             SizedBox(
@@ -79,7 +88,7 @@ class _LandingPageState extends State<LandingPage> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 55.0),
               decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+                  color: Color(0xff172633), borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
                   // Navigator.push(
@@ -103,7 +112,7 @@ class _LandingPageState extends State<LandingPage> {
               },
               child: Text(
                 'Access by QR code',
-                style: TextStyle(color: Colors.blue, fontSize: 15),
+                style: TextStyle(color: Color(0xff172633), fontSize: 15),
               ),
             ),
             SizedBox(
