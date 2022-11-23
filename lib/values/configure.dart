@@ -1,4 +1,4 @@
-class StringValue {
+class Configure {
 
   // API Link
   static const String mobileConfigApi =

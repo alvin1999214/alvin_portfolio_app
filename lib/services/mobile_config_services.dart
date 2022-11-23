@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:async';
 
+import 'package:alvin_portfolio_app/model/language_skill_model.dart';
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
 import 'package:alvin_portfolio_app/model/personal_education_model.dart';
 import 'package:alvin_portfolio_app/model/personal_experience_model.dart';
@@ -13,12 +14,13 @@ import 'package:http/http.dart' as http;
 
 import '../model/personal_info_model.dart';
 
-const mobileConfigUrl = StringValue.mobileConfigApi;
-const personalInfoUrl = StringValue.personalInfoApi;
-const experienceUrl = StringValue.experienceApi;
-const educationUrl = StringValue.educationApi;
-const profileBgImg = StringValue.profileBgImg;
-const profileImg = StringValue.profileImg;
+const mobileConfigUrl = Configure.mobileConfigApi;
+const personalInfoUrl = Configure.personalInfoApi;
+const experienceUrl = Configure.experienceApi;
+const educationUrl = Configure.educationApi;
+const profileBgImg = Configure.profileBgImg;
+const profileImg = Configure.profileImg;
+const languageSkillUrl = Configure.languageSkillApi;
 
 late String accessToken;
 late var headers;
@@ -85,6 +87,17 @@ Future<List<PersonalEducationModel>> fetchPersonalEducationModel() async{
   if(response.statusCode == 200) {
     final List<PersonalEducationModel> listEdu = personalEducationModelFromJson(response.body);
     return listEdu;
+  } else {
+    throw Exception('Failed to load');
+  }
+}
+
+Future<LanguageSkillModel> fetchLanguageSkillModel() async{
+
+  var response = await http.get(Uri.parse(languageSkillUrl),headers: headers);
+
+  if(response.statusCode == 200) {
+    return LanguageSkillModel.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to load');
   }

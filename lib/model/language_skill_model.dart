@@ -1,15 +1,15 @@
 // To parse this JSON data, do
 //
-//     final welcome = welcomeFromJson(jsonString);
+//     final languageSkillModel = languageSkillModelFromJson(jsonString);
 
 import 'dart:convert';
 
-List<Welcome> welcomeFromJson(String str) => List<Welcome>.from(json.decode(str).map((x) => Welcome.fromJson(x)));
+List<LanguageSkillModel> languageSkillModelFromJson(String str) => List<LanguageSkillModel>.from(json.decode(str).map((x) => LanguageSkillModel.fromJson(x)));
 
-String welcomeToJson(List<Welcome> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String languageSkillModelToJson(List<LanguageSkillModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Welcome {
-  Welcome({
+class LanguageSkillModel {
+  LanguageSkillModel({
     required this.language,
     required this.rating,
   });
@@ -17,7 +17,7 @@ class Welcome {
   String language;
   String rating;
 
-  factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
+  factory LanguageSkillModel.fromJson(Map<String, dynamic> json) => LanguageSkillModel(
     language: json["language"],
     rating: json["rating"],
   );

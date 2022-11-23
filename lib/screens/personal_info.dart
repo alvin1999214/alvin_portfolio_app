@@ -41,7 +41,7 @@ class _PersonalPageState extends State<PersonalPage> {
                   expandedHeight: 300,
                   paddingTop: MediaQuery.of(context).padding.top,
                   coverImgUrl:
-                      StringValue.profileBgImg),
+                      Configure.profileBgImg),
             ),
             SliverFillRemaining(
                 child: Column(
@@ -54,7 +54,7 @@ class _PersonalPageState extends State<PersonalPage> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: Image.network(
-                        StringValue.profileImg,
+                        Configure.profileImg,
                         headers: getTokenHeaders(),
                         width: 130,
                         height: 180,
