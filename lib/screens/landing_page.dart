@@ -3,6 +3,8 @@ import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? landingPageKey}) : super(key: landingPageKey);
 
@@ -94,8 +96,13 @@ class _LandingPageState extends State<LandingPage> {
                   // Navigator.push(
                   //     context, MaterialPageRoute(builder: (_) => HomePage()));
                   if (accessKeyController.text.isNotEmpty) {
-                    futureMobileConfig =
-                        fetchMobileConfig(accessKeyController.text, context);
+                    fetchMobileConfig(accessKeyController.text).then((value) => setState(() {
+                      if (value){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                      }else{
+                        showAccessFailDialog(context);
+                      }
+                    }));
                   } else {
                     showEmptyAccessKeyDialog(context);
                   }
