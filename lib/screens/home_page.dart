@@ -1,6 +1,6 @@
 import 'package:alvin_portfolio_app/screens/education.dart';
 import 'package:alvin_portfolio_app/screens/my_project.dart';
-import 'package:alvin_portfolio_app/screens/personal_info.dart';
+import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_main.dart';
 import 'package:alvin_portfolio_app/screens/work_experience.dart';
 import 'package:flutter/material.dart';
 
