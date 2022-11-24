@@ -30,6 +30,8 @@ class PersonalInfoModel {
 
 class Info {
   Info({
+    required this.nickName,
+    required this.fullName,
     required this.name,
     required this.phone,
     required this.address,
@@ -37,6 +39,8 @@ class Info {
     required this.title,
   });
 
+  String nickName;
+  String fullName;
   String name;
   String phone;
   String address;
@@ -44,6 +48,8 @@ class Info {
   String title;
 
   factory Info.fromJson(Map<String, dynamic> json) => Info(
+    nickName: json["nickName"],
+    fullName: json["fullName"],
     name: json["name"],
     phone: json["phone"],
     address: json["address"],
@@ -53,6 +59,8 @@ class Info {
 
   Map<String, dynamic> toJson() => {
     "name": name,
+    "nickName": nickName,
+    "fullName": fullName,
     "phone": phone,
     "address": address,
     "github": github,

@@ -69,7 +69,7 @@ class _PersonalInfoHeaderState extends State<PersonalInfoHeader>{
                   ),
                   Padding(padding: EdgeInsets.all(5.0)),
                   Text(
-                    mInfoObj!.info.name,
+                    mInfoObj!.info.nickName,
                     style:
                     TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),
                   ),

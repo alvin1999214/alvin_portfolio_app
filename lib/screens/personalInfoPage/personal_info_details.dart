@@ -76,7 +76,7 @@ class _PersonalInfoDetailsState extends State<PersonalInfoDetails> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                mInfoObj!.info.name,
+                                mInfoObj!.info.fullName,
                                 style: TextStyle(
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold,
