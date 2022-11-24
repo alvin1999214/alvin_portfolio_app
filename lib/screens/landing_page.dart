@@ -92,7 +92,7 @@ class _LandingPageState extends State<LandingPage> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 55.0),
                 decoration: BoxDecoration(
-                    color: Color(0xff172633), borderRadius: BorderRadius.circular(20)),
+                    color: Color(0xff172633), borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   onPressed: () {
                     // Navigator.push(
