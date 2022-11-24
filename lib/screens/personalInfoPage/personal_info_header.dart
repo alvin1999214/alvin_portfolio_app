@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../model/personal_info_model.dart';
 import '../../services/mobile_config_services.dart';
@@ -92,7 +93,9 @@ class _PersonalInfoHeaderState extends State<PersonalInfoHeader>{
                               focusColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onTap: () {},
+                              onTap: () {
+                                launchUrl(Uri.parse("https://wa.me/852${mInfoObj!.info.phone.replaceAll(' ', '')}"));
+                              },
                               child: Padding(
                                   padding: const EdgeInsets.all(30),
                                   child: Column(
