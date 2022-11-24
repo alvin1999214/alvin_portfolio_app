@@ -22,6 +22,7 @@ class _WorkExperienceDetails extends State<WorkExperienceDetails> {
         throw 'Could not launch $_url';
       }
     }
+
     return Scaffold(
         appBar: AppBar(
           title: Text("Job Details"),
@@ -29,13 +30,13 @@ class _WorkExperienceDetails extends State<WorkExperienceDetails> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            // distant between content and edge
+              // distant between content and edge
               padding: const EdgeInsets.all(20),
               // match parent of card
               width: double.infinity,
               // distant between card and parent
               margin:
-              const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
+                  const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   shape: BoxShape.rectangle,
@@ -54,31 +55,50 @@ class _WorkExperienceDetails extends State<WorkExperienceDetails> {
                 // Warp content of card
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Image.network(widget.workDetail.image,headers: getTokenHeaders(),),
+                  Image.network(
+                    widget.workDetail.image,
+                    headers: getTokenHeaders(),
+                  ),
                   Divider(height: 12),
-                  Text("Position: "),
+                  Text(
+                    "Position: ",
+                    style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),
+                  ),
                   SizedBox(height: 5),
-                  Text(widget.workDetail.position),
+                  Text(
+                    widget.workDetail.position,
+                    style: TextStyle(fontSize: 16, color: Color(0xff172733)),
+                  ),
                   SizedBox(height: 15),
-                  Text("Company: "),
+                  Text("Company: ",
+                    style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),),
                   SizedBox(height: 5),
-                  Text(widget.workDetail.companyName),
+                  Text(widget.workDetail.companyName,
+                    style: TextStyle(fontSize: 16, color: Color(0xff172733)),),
                   Divider(height: 12),
-                  Text("Responsibility: "),
+                  Text("Responsibility: ",
+                    style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),),
                   SizedBox(height: 5),
-                  Text(widget.workDetail.responsibility),
+                  Text(widget.workDetail.responsibility,
+                    style: TextStyle(fontSize: 16, color: Color(0xff172733)),),
                   Divider(height: 12),
-                  Text("Programming Language:"),
+                  Text("Programming Language:",
+                    style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),),
                   SizedBox(height: 5),
-                  Text(widget.workDetail.programLauguage),
+                  Text(widget.workDetail.programLauguage,
+                    style: TextStyle(fontSize: 16, color: Color(0xff172733)),),
                   Divider(height: 12),
-                  Text("Skills Using: "),
+                  Text("Skills Using: ",
+                    style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),),
                   SizedBox(height: 5),
-                  Text(widget.workDetail.software),
+                  Text(widget.workDetail.software,
+                    style: TextStyle(fontSize: 16, color: Color(0xff172733)),),
                   Divider(height: 12),
-                  Text("Company Website: "),
+                  Text("Company Website: ",
+                    style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),),
                   SizedBox(height: 5),
-                  Text(widget.workDetail.action),
+                  Text(widget.workDetail.action,
+                    style: TextStyle(fontSize: 16, color: Color(0xff172733)),),
                   Divider(height: 12),
                   Container(
                     width: double.infinity,
@@ -96,9 +116,7 @@ class _WorkExperienceDetails extends State<WorkExperienceDetails> {
                     ),
                   )
                 ],
-              )
-          ),
-        )
-    );
+              )),
+        ));
   }
 }
