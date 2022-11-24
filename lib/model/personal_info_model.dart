@@ -34,18 +34,21 @@ class Info {
     required this.phone,
     required this.address,
     required this.github,
+    required this.title,
   });
 
   String name;
   String phone;
   String address;
   String github;
+  String title;
 
   factory Info.fromJson(Map<String, dynamic> json) => Info(
     name: json["name"],
     phone: json["phone"],
     address: json["address"],
     github: json["github"],
+    title: json["title"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -53,5 +56,6 @@ class Info {
     "phone": phone,
     "address": address,
     "github": github,
+    "title": title,
   };
 }

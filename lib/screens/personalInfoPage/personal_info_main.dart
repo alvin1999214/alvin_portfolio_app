@@ -1,128 +1,187 @@
-import 'dart:math';
-import 'package:alvin_portfolio_app/model/personal_info_model.dart';
-import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_details.dart';
-import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_language.dart';
-import 'package:alvin_portfolio_app/screens/work_experience.dart';
-import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
-import 'package:alvin_portfolio_app/values/configure.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../model/personal_info_model.dart';
+import '../../services/mobile_config_services.dart';
+import '../../values/configure.dart';
 
 class PersonalInfoPage extends StatefulWidget {
   const PersonalInfoPage({Key? homePageKey}) : super(key: homePageKey);
-
   @override
-  _PersonalInfoPage createState() => _PersonalInfoPage();
+  _PersonalInfoPageState createState() => _PersonalInfoPageState();
 }
 
-class _PersonalInfoPage extends State<PersonalInfoPage>
-    with SingleTickerProviderStateMixin {
-  late TabController tabController;
+class _PersonalInfoPageState extends State<PersonalInfoPage> {
   bool? loading;
   PersonalInfoModel? mInfoObj;
-  final String title = "Personal Information";
 
   @override
   void initState() {
     super.initState();
-    this.tabController = TabController(
-      length: 2,
-      vsync: this,
-    );
     loading = true;
-    fetchPersonalInfoModel().then((obj) {
-      setState(() {
-        mInfoObj = obj;
-        loading = false;
-      });
-    });
+    fetchPersonalInfoModel().then((obj) => setState(() {
+      mInfoObj = obj;
+      loading = false;
+    }));
   }
 
   @override
   Widget build(BuildContext context) {
-    if (mInfoObj != null) {
-      return Scaffold(
-        backgroundColor: Color(0xffF5F7F9),
-        body: DefaultTabController(
-          length: 3,
-          child: NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverAppBar(
-                  backgroundColor: Color(0xff172633),
-                  pinned: true,
-                  elevation: 0,
-                  expandedHeight: 250,
-                  flexibleSpace: FlexibleSpaceBar(
-                    title: Text(title),
-                    background: Image.network(
-                      Configure.profileBgImg,
-                      headers: getTokenHeaders(),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: StickyTabBarDelegate(
-                    child: TabBar(
-                      labelColor: Colors.black,
-                      //controller: this.tabController,
-                      tabs: <Widget>[
-                        Tab(text: 'Profile'),
-                        Tab(text: 'Programming Language'),
+    return Scaffold(
+      // Persistent AppBar that never scrolls
+      appBar: AppBar(
+        title: Text('Personal Info'),
+        backgroundColor: Color(0xff172633),
+        elevation: 0.0,
+      ),
+      body: DefaultTabController(
+        length: 2,
+        child: NestedScrollView(
+          headerSliverBuilder: (context, isScrolled) {
+            return <Widget> [
+              SliverList(
+//                itemExtent: 300,
+                delegate: SliverChildListDelegate([
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        _detailedBody()
                       ],
                     ),
+                  )
+                ]),
+              ),
+            ];
+          },
+          // You tab view goes here
+          body: Column(
+            children: <Widget>[
+              Material(
+                color: Color(0xff172633),
+                child: Theme(
+                  data: ThemeData().copyWith(splashColor: Colors.grey),
+                  child: TabBar(
+                    indicatorColor: Colors.grey,
+                    tabs: [
+                      Tab(text: 'Details'),
+                      Tab(text: 'Programming Language'),
+                    ],
                   ),
                 ),
-              ];
-            },
-            body: TabBarView(
-              children: <Widget>[
-                PersonalInfoDetails(),
-                PersonalInfoLanguage(),
-              ],
-            ),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    ListView.builder(
+                        itemCount: 2,
+                        itemExtent: 50.0, //强制高度为50.0
+                        itemBuilder: (BuildContext context, int index) {
+                          return ListTile(title: Text("$index"));
+                        }
+                    ),
+                    Column(
+                      children: [
+                        Text("data")
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
-      );
-    } else {
-      return Scaffold(
-        body: const Center(
-          child: Text('Loading...',
-              style: TextStyle(
-                color: Color(0xff172633),
-                fontSize: 20,
-              )),
-        ),
-      );
-    }
-  }
-}
-
-class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
-  final TabBar child;
-
-  StickyTabBarDelegate({required this.child});
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    //return this.child;
-    return new Container(
-      color: Colors.white,
-      child: this.child,
+      ),
     );
   }
 
-  @override
-  double get maxExtent => this.child.preferredSize.height;
+  Widget _detailedBody() {
+    return SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.width * 2 / 5,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: NetworkImage(
+                    Configure.profileBgImg,headers: getTokenHeaders()),
+              ),
+            ),
+          ),
+          Container(
+            transform: Matrix4.translationValues(0.0, -41.0, 0.0),
+            child: Column(
+              children: <Widget>[
+                Stack(
+                  alignment: Alignment.center,
+                  children: <Widget>[
+                    SizedBox(
+                      width: 90.0,
+                      height: 90.0,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
 
-  @override
-  double get minExtent => this.child.preferredSize.height;
+                      ),
+                    ),
+                    SizedBox(
+                      width: 82.0,
+                      height: 82.0,
+                      child: CircleAvatar(
+                          backgroundImage: NetworkImage(Configure.profileImg,headers: getTokenHeaders())
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(padding: EdgeInsets.all(5.0)),
+                Text(
+                  mInfoObj!.info.name,
+                  style:
+                  TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),
+                ),
+                Padding(padding: EdgeInsets.all(5.0)),
+                Text(
+                  mInfoObj!.info.title,
+                  style:
+                  TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+                ),
+                Padding(padding: EdgeInsets.all(9.0)),
+                Padding(padding: EdgeInsets.all(9.0)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.whatsapp),
+                        Text(
+                          'Whatsapp',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.g_mobiledata),
+                        Text(
+                          'GitHub',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
 
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    return true;
+    );
   }
 }

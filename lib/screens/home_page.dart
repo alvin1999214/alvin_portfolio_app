@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   final screen = [
-    InstaProfilePage(),
+    PersonalInfoPage(),
     WorkExperiencePage(),
     EducationPage(),
     //MyProjectPage(),
