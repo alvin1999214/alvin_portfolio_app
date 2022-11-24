@@ -87,21 +87,21 @@ class _PersonalInfoHeaderState extends State<PersonalInfoHeader>{
                     children: <Widget>[
                       Column(
                         children: <Widget>[
-                          Icon(Icons.whatsapp),
+                          Icon(Icons.whatsapp,size: 32,),
                           Text(
                             'Whatsapp',
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 20.0),
+                            style: TextStyle(fontSize: 14.0),
                           ),
                         ],
                       ),
                       Column(
                         children: <Widget>[
-                          Icon(Icons.g_mobiledata),
+                          Icon(Icons.email_outlined,size: 32,),
                           Text(
-                            'GitHub',
+                            'Email',
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 20.0),
+                            style: TextStyle(fontSize: 14.0),
                           ),
                         ],
                       ),
