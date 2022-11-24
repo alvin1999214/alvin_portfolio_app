@@ -151,16 +151,7 @@ class _PersonalInfoHeaderState extends State<PersonalInfoHeader>{
 
       );
     } else {
-      return Scaffold(
-        body: const Center(
-          child: Text('Loading...',
-              style: TextStyle(
-                color: Color(0xff172633),
-                fontSize: 20,
-              )
-          ),
-        ),
-      );
+      return Text("Loading...");
     }
   }
 
