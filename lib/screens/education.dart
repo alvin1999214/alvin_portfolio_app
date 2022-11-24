@@ -35,16 +35,13 @@ class _EducationPageState extends State<EducationPage> {
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Color(0xff172633),
               pinned: true,
               expandedHeight: 250,
               elevation: 0,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text(this.title,style: TextStyle(color: Color(0xff172633)),),
-                background: Image.network(
-                  'https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/invest%20-education.jpg',
-                  fit: BoxFit.cover,
-                ),
+                title: Text(this.title,style: TextStyle(color: Colors.white),),
+                background: Image(image: AssetImage('education.jpg'),fit: BoxFit.cover,),
               ),
             ),
             SliverList(
