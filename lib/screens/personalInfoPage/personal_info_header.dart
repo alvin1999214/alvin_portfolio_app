@@ -85,25 +85,55 @@ class _PersonalInfoHeaderState extends State<PersonalInfoHeader>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Icon(Icons.whatsapp,size: 32,),
-                          Text(
-                            'Whatsapp',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 14.0),
+                      Material(
+                        child: Container(
+                          child: Center(
+                            child: InkResponse(
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () {},
+                              child: Padding(
+                                  padding: const EdgeInsets.all(30),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Icon(Icons.whatsapp,size: 32,),
+                                      Text(
+                                        'Whatsapp',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize: 14.0),
+                                      ),
+                                    ],
+                                  )
+                              ),
+                            ),
                           ),
-                        ],
+                        ),
                       ),
-                      Column(
-                        children: <Widget>[
-                          Icon(Icons.email_outlined,size: 32,),
-                          Text(
-                            'Email',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 14.0),
+                      Material(
+                        child: Container(
+                          child: Center(
+                            child: InkResponse(
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () {},
+                              child: Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Column(
+                                  children: <Widget>[
+                                    Icon(Icons.email_outlined,size: 32,),
+                                    Text(
+                                      'Email',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontSize: 14.0),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
-                        ],
+                        ),
                       ),
                     ],
                   )
