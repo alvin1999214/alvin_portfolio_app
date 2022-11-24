@@ -1,3 +1,4 @@
+import 'package:alvin_portfolio_app/Feature/qr_scanner.dart';
 import 'package:alvin_portfolio_app/model/mobile_config_model.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:alvin_portfolio_app/widget/pop_up_dialog.dart';
@@ -19,7 +20,6 @@ class _LandingPageState extends State<LandingPage> {
   @override
   void initState() {
     super.initState();
-    // futureMobileConfig = fetchMobileConfig();
   }
 
   @override
@@ -116,8 +116,20 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
               TextButton(
-                onPressed: () {
-                  //TODO Scan QR code
+                onPressed: () async {
+                  //Navigator.push(context, MaterialPageRoute(builder: (_) => QRScanner()));
+                  final String scannedToken = await Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => QRScanner(),
+                      ),
+                  );
+                  fetchMobileConfig(scannedToken).then((list) {
+                    setState(() {
+                      if(list){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                      }
+                    });
+                  });
                 },
                 child: Text(
                   'Access by QR code',
