@@ -120,7 +120,10 @@ class _PersonalInfoHeaderState extends State<PersonalInfoHeader>{
                               focusColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onTap: () {},
+                              onTap: () {
+                                String email = Uri.encodeComponent(mInfoObj!.info.email);
+                                launchUrl(Uri.parse("mailto:$email"));
+                              },
                               child: Padding(
                                 padding: const EdgeInsets.all(30),
                                 child: Column(
