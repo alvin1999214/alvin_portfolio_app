@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:alvin_portfolio_app/model/personal_info_model.dart';
 import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_details.dart';
 import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_language.dart';
-import 'package:alvin_portfolio_app/screens/work_experience.dart';
+import 'package:alvin_portfolio_app/screens/workExperiencePage/work_experience.dart';
 import 'package:alvin_portfolio_app/services/mobile_config_services.dart';
 import 'package:alvin_portfolio_app/values/configure.dart';
 import 'package:flutter/material.dart';
