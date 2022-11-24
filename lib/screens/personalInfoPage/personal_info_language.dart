@@ -51,7 +51,18 @@ class _PersonalInfoLanguageState extends State<PersonalInfoLanguage> {
                           )
                         ]),
                     child: Column(
-                      children: [Text(mItem.language), Text(mItem.rating)],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Programming Language: ",
+                          style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),),
+                        Text(mItem.language,
+                          style: TextStyle(fontSize: 16, color: Color(0xff172733)),),
+                        SizedBox(height: 14,),
+                        Text("Familiarity: ",
+                          style: TextStyle(fontSize: 14, color: Color(0xff9ba4ab)),),
+                        Text(mItem.rating,
+                          style: TextStyle(fontSize: 16, color: Color(0xff172733)),)
+                      ],
                     ),
                   );
                 },
