@@ -27,90 +27,119 @@ class _PersonalInfoDetailsState extends State<PersonalInfoDetails> {
     if (mInfoObj != null) {
       return Scaffold(
         body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(height: 10),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: Image.network(
-                        Configure.profileImg,
-                        headers: getTokenHeaders(),
-                        width: 130,
-                        height: 180,
-                        fit: BoxFit.cover,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(height: 10),
+              Container(
+                padding: const EdgeInsets.all(20),
+                // match parent of card
+                width: double.infinity,
+                // distant between card and parent
+                margin:
+                const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(8.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      )
+                    ]),
+                child: Scrollbar(
+                    isAlwaysShown: true, //always show scrollbar
+                  interactive: true,
+                    thickness: 10, //width of scrollbar
+                    radius: Radius.circular(20), //corner radius of scrollbar
+                    scrollbarOrientation: ScrollbarOrientation.bottom, //which side to show scrollbar
+                    child:SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: Image.network(
+                              Configure.profileImg,
+                              headers: getTokenHeaders(),
+                              width: 130,
+                              height: 180,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.only(left: 16)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                mInfoObj!.info.name,
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF333333),
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(top: 10)),
+                              Text(
+                                "Title: ${mInfoObj!.info.title}",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF999999),
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(top: 2)),
+                              Text(
+                                "Phone: ${mInfoObj!.info.phone}",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF999999),
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(top: 2)),
+                              Text(
+                                "Github: ${mInfoObj!.info.github}",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color(0xFF999999),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(left: 16)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          mInfoObj!.info.name,
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF333333),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 10)),
-                        Text(
-                          "Phone: ${mInfoObj!.info.phone}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 2)),
-                        Text(
-                          "Address: ${mInfoObj!.info.address}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 2)),
-                        Text(
-                          "Github: ${mInfoObj!.info.github}",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF999999),
-                          ),
-                        ),
-                      ],
+                )
+
+              ),
+              Divider(height: 32),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Career Objective',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF333333),
                     ),
-                  ],
-                ),
-                Divider(height: 32),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Career Objective',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF333333),
-                      ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
+                  Text(
+                    mInfoObj!.careerObjective,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color(0xFF999999),
                     ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    Text(
-                      mInfoObj!.careerObjective,
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF999999),
-                      ),
-                    ),
-                  ],
-                ),
-                Divider(height: 32),
-              ],
-            ),
+                  ),
+                ],
+              ),
+              Divider(height: 32),
+            ],
           ),
         )
       );
