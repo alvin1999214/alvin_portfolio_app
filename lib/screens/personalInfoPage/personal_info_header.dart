@@ -6,8 +6,6 @@ import '../../services/mobile_config_services.dart';
 import '../../values/configure.dart';
 
 class PersonalInfoHeader extends StatefulWidget{
-  const PersonalInfoHeader({Key? homePageKey}) : super(key: homePageKey);
-
   @override
   _PersonalInfoHeaderState createState() => _PersonalInfoHeaderState();
 }

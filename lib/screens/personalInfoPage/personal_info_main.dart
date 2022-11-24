@@ -1,4 +1,6 @@
+import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_details.dart';
 import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_header.dart';
+import 'package:alvin_portfolio_app/screens/personalInfoPage/personal_info_language.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -59,19 +61,9 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
               ),
               Expanded(
                 child: TabBarView(
-                  children: [
-                    ListView.builder(
-                        itemCount: 2,
-                        itemExtent: 50.0, //强制高度为50.0
-                        itemBuilder: (BuildContext context, int index) {
-                          return ListTile(title: Text("$index"));
-                        }
-                    ),
-                    Column(
-                      children: [
-                        Text("data")
-                      ],
-                    )
+                  children: <Widget>[
+                    PersonalInfoDetails(),
+                    PersonalInfoLanguage()
                   ],
                 ),
               ),
