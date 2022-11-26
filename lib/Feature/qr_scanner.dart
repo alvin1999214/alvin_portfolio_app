@@ -74,7 +74,7 @@ class _QRScannerState extends State<QRScanner> {
                                   return Text(
                                       'Switch Camera',style: TextStyle(color: Colors.white,),);
                                 } else {
-                                  return const Text('loading');
+                                  return const Text('loading',style: TextStyle(color: Colors.white,),);
                                 }
                               },
                             )),
