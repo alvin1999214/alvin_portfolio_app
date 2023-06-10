@@ -5,10 +5,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <Button
+            android:id="@+id/btn_click"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello"/>
+            android:layout_height="wrap_content"
+            android:text="click"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -6,22 +6,49 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModelProvider
 import com.portfolio.nativeandroidapp.R
 import com.portfolio.nativeandroidapp.databinding.FragmentRecyclerViewBinding
+import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
+import com.portfolio.nativeandroidapp.util.DialogUtil
+import com.portfolio.nativeandroidapp.viewmodel.MainViewModel
 
 class RecyclerViewFragment : Fragment() {
     private lateinit var mBinding: FragmentRecyclerViewBinding
+    private var cacheView: View? = null
+    private var mMainViewModel: MainViewModel? = null
+    private var isInitialized = false
+    private var mDisneyCharacterResponse: DisneyCharacterResponse? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mMainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_recycler_view, container, false)
-        return mBinding.root
+        if (cacheView == null) {
+            mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_recycler_view, container, false)
+            cacheView = mBinding.root
+        }
+        return cacheView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        observeLoading()
+        observeDisneyCharacterList()
+        initView()
+    }
+
+    private fun initView() {
+        mBinding.btnClick.setOnClickListener {
+            mMainViewModel?.disneyCharacterGetService(requireContext())
+        }
     }
 
     companion object {
@@ -31,6 +58,24 @@ class RecyclerViewFragment : Fragment() {
             if (bundle != null)
                 fragment.arguments = bundle
             return fragment
+        }
+    }
+
+    private fun observeDisneyCharacterList() {
+        mMainViewModel?.disneyCharacterGetResponse?.observe(viewLifecycleOwner) { response ->
+            if (view != null && viewLifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
+                mDisneyCharacterResponse = response
+            }
+        }
+    }
+
+    private fun observeLoading() {
+        mMainViewModel?.loadingState?.observe(viewLifecycleOwner) {
+            if (it.isLoading) {
+                DialogUtil.showLoadingDialog(parentFragmentManager)
+            } else {
+                DialogUtil.dismissLoadingDialog()
+            }
         }
     }
 }
