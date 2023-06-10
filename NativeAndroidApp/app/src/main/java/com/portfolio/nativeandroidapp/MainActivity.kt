@@ -3,12 +3,13 @@ package com.portfolio.nativeandroidapp
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.portfolio.nativeandroidapp.activity.MainAppActivity
 import com.portfolio.nativeandroidapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -29,13 +30,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-//            R.id.btn_scan_and_pay -> launchBillPaymentMfe(BillPaymentMfeLaunchAction.SCAN_AND_PAY)
-//            R.id.btn_p2p_dashboard -> launchBillPaymentMfe(BillPaymentMfeLaunchAction.P2P_PAYMENT)
-//            R.id.btn_manage_limit -> launchBillPaymentMfe(BillPaymentMfeLaunchAction.MANAGE_LIMIT)
-//            R.id.btn_security_option_setting -> launchBillPaymentMfe(BillPaymentMfeLaunchAction.SECURITY_OPTION_SETTING)
-//            R.id.btn_reset -> resetSharePreference()
-//            R.id.btn_setting -> launchSetting()
+            R.id.btn_main -> startMainApp()
+            R.id.btn_reset -> resetSharePreference()
+            R.id.btn_setting -> launchSetting()
         }
+    }
+
+    private fun startMainApp() {
+        val intent = Intent(this, MainAppActivity::class.java)
+        startActivity(intent)
     }
 
     private fun resetSharePreference() {
