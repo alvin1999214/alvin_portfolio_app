@@ -1,12 +1,16 @@
 package com.portfolio.nativeandroidapp.service
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.LiveDataReactiveStreams
+import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
 import io.reactivex.BackpressureStrategy
 import io.reactivex.subjects.PublishSubject
+import io.reactivex.Observable
 
 class MainRepository {
 
+    var mMainServices = MainServices()
     private val mErrorResponse =
         PublishSubject.create<String>()
     var errorHttpException: LiveData<Map<String, String>>? = null
@@ -41,5 +45,11 @@ class MainRepository {
 //                sInstance = null
 //            }
 //        }
+    }
+
+    fun getDisneyCharacter(
+        context: Context
+    ):Observable<DisneyCharacterResponse>? {
+        return mMainServices.getDisneyCharacter(context)
     }
 }
