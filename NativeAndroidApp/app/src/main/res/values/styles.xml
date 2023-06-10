@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NewAppTheme.Button.Cap.Fill" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_btn_purple_cap_fill</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <style name="NewAppTheme.Button.Cap.Hollow" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_btn_purple_cap_hollow</item>
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+</resources>
