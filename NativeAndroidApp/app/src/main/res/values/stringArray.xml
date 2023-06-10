@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="root_files">
+        <item>/system/app/Superuser.apk</item>
+        <item>/system/etc/init.d/99SuperSUDaemon</item>
+        <item>/dev/com.koushikdutta.superuser.daemon/</item>
+        <item>/system/xbin/daemonsu</item>
+        <item>/sbin/su</item>
+        <item>/system/su</item>
+        <item>/system/bin/.ext/.su</item>
+        <item>/system/bin/su</item>
+        <item>/system/usr/we-need-root/su-backup</item>
+        <item>/system/xbin/su</item>
+        <item>/data/local/su</item>
+        <item>/data/local/xbin/su</item>
+        <item>/system/framework/XposedBridge.jar</item>
+    </string-array>
+
+    <string-array name="root_services">
+        <item>supersu</item>
+        <item>superuser</item>
+        <item>fridaserver</item>
+        <item>frida-server</item>
+    </string-array>
+
+    <string-array name="root_tools">
+        <item>com.thirdparty.superuser</item>
+        <item>eu.chainfire.supersu</item>
+        <item>com.noshufou.android.su</item>
+        <item>com.koushikdutta.superuser</item>
+        <item>com.zachspong.temprootremovejb</item>
+        <item>com.ramdroid.appquarantine</item>
+        <item>com.saurik.substrate</item>
+        <item>de.robv.android.xposed.installer</item>
+        <item>com.introspy.core</item>
+        <item>com.introspy.config</item>
+        <item>com.mwr.dz</item>
+        <item>com.devadvance.rootcloak</item>
+        <item>com.devadvance.rootcloak2</item>
+        <item>com.android.SSLTrustKiller</item>
+    </string-array>
+
+    <string-array name="root_dir_permission">
+        <item>/data</item>
+        <item>/</item>
+        <item>/system</item>
+        <item>/system/bin</item>
+        <item>/system/sbin</item>
+        <item>/system/xbin</item>
+        <item>/vendor/bin</item>
+        <item>/sys</item>
+        <item>/sbin</item>
+        <item>/etc</item>
+        <item>/proc</item>
+        <item>/dev</item>
+    </string-array>
+
+    <string name="busybox_path">/system/xbin/busybox</string>
+
+    <string name="protection_check_error_code_format" translatable="false">PCE-%04d</string>
+</resources>
