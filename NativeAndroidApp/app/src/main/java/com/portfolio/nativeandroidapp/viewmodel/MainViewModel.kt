@@ -10,6 +10,7 @@ import com.google.gson.reflect.TypeToken
 import com.portfolio.nativeandroidapp.R
 import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
+import com.portfolio.nativeandroidapp.model.response.JsonPlaceHolderPostResponse
 import com.portfolio.nativeandroidapp.service.Constants.Companion.isMock
 import com.portfolio.nativeandroidapp.service.MainRepository
 import com.portfolio.nativeandroidapp.service.MainServices
@@ -24,6 +25,9 @@ class MainViewModel(application: Application): BaseViewModel(application) {
 
     private var _bankListResponse = MutableLiveData<BankListResponse>()
     val bankListResponse: LiveData<BankListResponse> = _bankListResponse
+
+    private var _postListResponse = MutableLiveData<JsonPlaceHolderPostResponse>()
+    val postListResponse: LiveData<JsonPlaceHolderPostResponse> = _postListResponse
 
     private var _disneyCharacterGetResponse = MutableLiveData<DisneyCharacterResponse>()
     val disneyCharacterGetResponse: LiveData<DisneyCharacterResponse> = _disneyCharacterGetResponse
@@ -129,5 +133,34 @@ class MainViewModel(application: Application): BaseViewModel(application) {
                     })
             )
         }
+    }
+
+    fun getPostList(context: Context) {
+        mCompositeDisposable.add(
+            MainRepository.instance.getPostList(context)
+                ?.subscribeOn(Schedulers.io())
+                ?.observeOn(AndroidSchedulers.mainThread())
+            !!.subscribeWith(object : DisposableObserver<JsonPlaceHolderPostResponse>() {
+                    override fun onStart() {
+                        isGetBankListLoading = true
+                        setLoadingState(true)
+                    }
+
+                    override fun onNext(data: JsonPlaceHolderPostResponse) {
+                        _postListResponse.postValue(data)
+                        isGetBankListLoading = false
+                        setLoadingState(false)
+                    }
+
+                    override fun onError(e: Throwable) {
+                        isGetBankListLoading = false
+                        isApiError = true
+                        setLoadingState(false)
+                        handleApiError(e)
+                    }
+
+                    override fun onComplete() {}
+                })
+        )
     }
 }

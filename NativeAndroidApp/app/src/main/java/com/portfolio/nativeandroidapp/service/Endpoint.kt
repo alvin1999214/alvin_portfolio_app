@@ -2,6 +2,7 @@ package com.portfolio.nativeandroidapp.service
 
 import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
+import com.portfolio.nativeandroidapp.model.response.JsonPlaceHolderPostResponse
 import io.reactivex.Observable
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -19,4 +20,7 @@ interface Endpoint {
 
     @GET(Constants.BANK_LIST)
     fun getBankList(): Observable<BankListResponse?>
+
+    @GET(Constants.JSON_PLACE_HOLDER_POST)
+    fun getPostList(): Observable<JsonPlaceHolderPostResponse?>
 }

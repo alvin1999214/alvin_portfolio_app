@@ -12,6 +12,7 @@ import com.portfolio.nativeandroidapp.R
 import com.portfolio.nativeandroidapp.databinding.FragmentRecyclerViewBinding
 import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
+import com.portfolio.nativeandroidapp.model.response.JsonPlaceHolderPostResponse
 import com.portfolio.nativeandroidapp.util.DialogUtil
 import com.portfolio.nativeandroidapp.viewmodel.MainViewModel
 
@@ -22,6 +23,7 @@ class RecyclerViewFragment : Fragment() {
     private var isInitialized = false
     private var mDisneyCharacterResponse: DisneyCharacterResponse? = null
     private var mBankListResponse: BankListResponse? = null
+    private var mPostListResponse: JsonPlaceHolderPostResponse? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,13 +47,15 @@ class RecyclerViewFragment : Fragment() {
         observeLoading()
         observeDisneyCharacterList()
         observeBankList()
+        observePostList()
         initView()
     }
 
     private fun initView() {
         mBinding.btnClick.setOnClickListener {
 //            mMainViewModel?.disneyCharacterGetService(requireContext())
-            mMainViewModel?.getBankList(requireContext())
+//            mMainViewModel?.getBankList(requireContext())
+            mMainViewModel?.getPostList(requireContext())
         }
     }
 
@@ -77,6 +81,14 @@ class RecyclerViewFragment : Fragment() {
         mMainViewModel?.bankListResponse?.observe(viewLifecycleOwner) { response ->
             if (view != null && viewLifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
                 mBankListResponse = response
+            }
+        }
+    }
+
+    private fun observePostList() {
+        mMainViewModel?.postListResponse?.observe(viewLifecycleOwner) { response ->
+            if (view != null && viewLifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
+                mPostListResponse = response
             }
         }
     }

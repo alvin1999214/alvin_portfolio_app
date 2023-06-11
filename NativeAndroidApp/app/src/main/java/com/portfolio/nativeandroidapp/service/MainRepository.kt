@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.LiveDataReactiveStreams
 import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
+import com.portfolio.nativeandroidapp.model.response.JsonPlaceHolderPostResponse
 import io.reactivex.BackpressureStrategy
 import io.reactivex.subjects.PublishSubject
 import io.reactivex.Observable
@@ -58,5 +59,11 @@ class MainRepository {
         context: Context,
     ) :Observable<BankListResponse>? {
         return mMainServices.getBankList(context)
+    }
+
+    fun getPostList(
+        context: Context,
+    ) :Observable<JsonPlaceHolderPostResponse>? {
+        return mMainServices.getPostList(context) ?:Observable.empty()
     }
 }

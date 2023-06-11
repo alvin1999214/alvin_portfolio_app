@@ -3,6 +3,7 @@ package com.portfolio.nativeandroidapp.service
 import android.content.Context
 import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
+import com.portfolio.nativeandroidapp.model.response.JsonPlaceHolderPostResponse
 import com.portfolio.nativeandroidapp.network.RetrofitClient
 import com.portfolio.nativeandroidapp.network.security.SecurityCheckOperator
 import io.reactivex.Observable
@@ -23,5 +24,11 @@ class MainServices: BaseService<Endpoint>() {
             Observable<BankListResponse>? {
         serviceInstance = RetrofitClient.getDefaultInstance()?.create(endpointClass)
         return serviceInstance?.getBankList()?.lift(SecurityCheckOperator(context))
+    }
+
+    fun getPostList(context: Context):
+            Observable<JsonPlaceHolderPostResponse>? {
+        serviceInstance = RetrofitClient.getDefaultInstance()?.create(endpointClass)
+        return serviceInstance?.getPostList()?.lift(SecurityCheckOperator(context))
     }
 }
