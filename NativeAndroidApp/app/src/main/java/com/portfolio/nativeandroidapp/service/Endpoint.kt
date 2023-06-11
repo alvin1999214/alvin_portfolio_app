@@ -1,5 +1,6 @@
 package com.portfolio.nativeandroidapp.service
 
+import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
 import io.reactivex.Observable
 import okhttp3.ResponseBody
@@ -15,4 +16,7 @@ interface Endpoint {
 
     @GET(Constants.DISNEY_CHARACTER)
     fun getDisneyCharacter(): Observable<DisneyCharacterResponse?>?
+
+    @GET(Constants.BANK_LIST)
+    fun getBankList(): Observable<BankListResponse?>
 }

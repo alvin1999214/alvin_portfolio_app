@@ -1,4 +1,4 @@
-package com.portfolio.nativeandroidapp.ui
+package com.portfolio.nativeandroidapp.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.portfolio.nativeandroidapp.R
 import com.portfolio.nativeandroidapp.databinding.FragmentRecyclerViewBinding
+import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
 import com.portfolio.nativeandroidapp.util.DialogUtil
 import com.portfolio.nativeandroidapp.viewmodel.MainViewModel
@@ -20,6 +21,7 @@ class RecyclerViewFragment : Fragment() {
     private var mMainViewModel: MainViewModel? = null
     private var isInitialized = false
     private var mDisneyCharacterResponse: DisneyCharacterResponse? = null
+    private var mBankListResponse: BankListResponse? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,12 +44,14 @@ class RecyclerViewFragment : Fragment() {
 
         observeLoading()
         observeDisneyCharacterList()
+        observeBankList()
         initView()
     }
 
     private fun initView() {
         mBinding.btnClick.setOnClickListener {
-            mMainViewModel?.disneyCharacterGetService(requireContext())
+//            mMainViewModel?.disneyCharacterGetService(requireContext())
+            mMainViewModel?.getBankList(requireContext())
         }
     }
 
@@ -65,6 +69,14 @@ class RecyclerViewFragment : Fragment() {
         mMainViewModel?.disneyCharacterGetResponse?.observe(viewLifecycleOwner) { response ->
             if (view != null && viewLifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
                 mDisneyCharacterResponse = response
+            }
+        }
+    }
+
+    private fun observeBankList() {
+        mMainViewModel?.bankListResponse?.observe(viewLifecycleOwner) { response ->
+            if (view != null && viewLifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
+                mBankListResponse = response
             }
         }
     }

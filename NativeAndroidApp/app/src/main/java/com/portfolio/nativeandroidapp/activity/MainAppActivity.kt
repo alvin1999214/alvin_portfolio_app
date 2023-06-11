@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.portfolio.nativeandroidapp.R
-import com.portfolio.nativeandroidapp.ui.RecyclerViewFragment
+import com.portfolio.nativeandroidapp.ui.fragment.RecyclerViewFragment
 
 class MainAppActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

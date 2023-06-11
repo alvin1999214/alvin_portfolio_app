@@ -3,6 +3,7 @@ package com.portfolio.nativeandroidapp.service
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.LiveDataReactiveStreams
+import com.portfolio.nativeandroidapp.model.response.BankListResponse
 import com.portfolio.nativeandroidapp.model.response.DisneyCharacterResponse
 import io.reactivex.BackpressureStrategy
 import io.reactivex.subjects.PublishSubject
@@ -51,5 +52,11 @@ class MainRepository {
         context: Context
     ):Observable<DisneyCharacterResponse>? {
         return mMainServices.getDisneyCharacter(context)
+    }
+
+    fun getBankList(
+        context: Context,
+    ) :Observable<BankListResponse>? {
+        return mMainServices.getBankList(context)
     }
 }

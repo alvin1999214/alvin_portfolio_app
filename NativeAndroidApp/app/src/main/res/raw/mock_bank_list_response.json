@@ -1,0 +1,1076 @@
+[
+  {
+    "code": "003",
+    "nameEn": "STANDARD CHARTERED BANK (HONG KONG) LIMITED",
+    "nameZh": "渣打銀行(香港)有限公司",
+    "freqUsed": "5"
+  },
+  {
+    "code": "004",
+    "nameEn": "The Hongkong and Shanghai Banking Corporation Limited",
+    "nameZh": "香港上海滙豐銀行有限公司",
+    "freqUsed": "2"
+  },
+  {
+    "code": "005",
+    "nameEn": "Credit Agricole Corporate and Investment Bank",
+    "nameZh": "法國東方匯理銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "006",
+    "nameEn": "Citibank N.A. Hong Kong",
+    "nameZh": "花旗銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "007",
+    "nameEn": "JPMorgan Chase Bank, N.A.",
+    "nameZh": "摩根大通銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "008",
+    "nameEn": "NatWest Markets Plc Hong Kong Branch",
+    "nameZh": "國民西敏寺資本市場銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "009",
+    "nameEn": "China Construction Bank (Asia) Corporation Limited",
+    "nameZh": "中國建設銀行(亞洲)股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "012",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "4"
+  },
+  {
+    "code": "014",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "015",
+    "nameEn": "The Bank of East Asia, Limited",
+    "nameZh": "東亞銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "016",
+    "nameEn": "DBS Bank (Hong Kong) Ltd.",
+    "nameZh": "星展銀行 (香港)有限公司",
+    "freqUsed": "1"
+  },
+  {
+    "code": "018",
+    "nameEn": "CHINA CITIC BANK INTERNATIONAL LIMITED",
+    "nameZh": "中信銀行(國際)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "019",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "020",
+    "nameEn": "CMB Wing Lung Bank Limited",
+    "nameZh": "招商永隆銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "022",
+    "nameEn": "OVERSEA - CHINESE BANKING CORPORATION LIMITED",
+    "nameZh": "OVERSEA - CHINESE BANKING CORPORATION LIMITED",
+    "freqUsed": "N"
+  },
+  {
+    "code": "024",
+    "nameEn": "Hang Seng Bank Ltd.",
+    "nameZh": "恒生銀行有限公司",
+    "freqUsed": "3"
+  },
+  {
+    "code": "025",
+    "nameEn": "Shanghai Commercial Bank Limited",
+    "nameZh": "上海商業銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "026",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "027",
+    "nameEn": "Bank of Communications Co., Ltd. Hong Kong Branch",
+    "nameZh": "交通銀行股份有限公司 香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "028",
+    "nameEn": "Public Bank (Hong Kong) Limited",
+    "nameZh": "大眾銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "029",
+    "nameEn": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ASIA) LIMITED",
+    "nameZh": "中國工商銀行(亞洲)",
+    "freqUsed": "N"
+  },
+  {
+    "code": "030",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "031",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "032",
+    "nameEn": "DBS Bank (Hong Kong) Ltd.",
+    "nameZh": "星展銀行 (香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "033",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "035",
+    "nameEn": "OCBC Wing Hang Bank Limited",
+    "nameZh": "華僑永亨銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "036",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "038",
+    "nameEn": "Tai Yau Bank Limited",
+    "nameZh": "大有銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "039",
+    "nameEn": "Chiyu Banking Corporation Limited",
+    "nameZh": "集友銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "040",
+    "nameEn": "Dah Sing Bank, Limited",
+    "nameZh": "大新銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "041",
+    "nameEn": "Chong Hing Bank Limited",
+    "nameZh": "創興銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "043",
+    "nameEn": "Nanyang Commercial Bank, Limited",
+    "nameZh": "南洋商業銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "044",
+    "nameEn": "OCBC Wing Hang Bank Limited",
+    "nameZh": "華僑永亨銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "045",
+    "nameEn": "UCO BANK HONG KONG",
+    "nameZh": "UCO BANK HONG KONG",
+    "freqUsed": "N"
+  },
+  {
+    "code": "046",
+    "nameEn": "KEB HANA BANK",
+    "nameZh": "KEB HANA BANK",
+    "freqUsed": "N"
+  },
+  {
+    "code": "047",
+    "nameEn": "MUFG Bank, Ltd.",
+    "nameZh": "三菱UFJ銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "049",
+    "nameEn": "BANGKOK BANK PUBLIC COMPANY LIMITED",
+    "nameZh": "BANGKOK BANK PUBLIC COMPANY LIMITED",
+    "freqUsed": "N"
+  },
+  {
+    "code": "050",
+    "nameEn": "INDIAN OVERSEAS BANK",
+    "nameZh": "INDIAN OVERSEAS BANK",
+    "freqUsed": "N"
+  },
+  {
+    "code": "051",
+    "nameEn": "CHINA CITIC BANK INTERNATIONAL LIMITED",
+    "nameZh": "中信銀行(國際)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "052",
+    "nameEn": "DBS Bank (Hong Kong) Ltd.",
+    "nameZh": "星展銀行 (香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "054",
+    "nameEn": "Deutsche Bank AG Hong Kong Branch",
+    "nameZh": "德意志銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "055",
+    "nameEn": "Bank of America N.A.",
+    "nameZh": "美國銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "056",
+    "nameEn": "BNP PARIBAS HONG KONG BRANCH",
+    "nameZh": "法國巴黎銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "058",
+    "nameEn": "BANK OF INDIA",
+    "nameZh": "印度銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "060",
+    "nameEn": "National Bank of Pakistan",
+    "nameZh": "巴基斯坦國民銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "061",
+    "nameEn": "TAI SANG BANK LTD.",
+    "nameZh": "大生銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "063",
+    "nameEn": "Malayan Banking Berhad Hong Kong Branch",
+    "nameZh": "馬來亞銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "064",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "065",
+    "nameEn": "Sumitomo Mitsui Banking Corporation",
+    "nameZh": "三井住友銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "066",
+    "nameEn": "PT. BANK NEGARA INDONESIA (PERSERO) TBK.",
+    "nameZh": "印尼國家銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "067",
+    "nameEn": "BDO UNIBANK, INC.",
+    "nameZh": "金融銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "070",
+    "nameEn": "Bank of China (Hong Kong) Limited",
+    "nameZh": "中國銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "071",
+    "nameEn": "United Overseas Bank Limited",
+    "nameZh": "大華銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "072",
+    "nameEn": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ASIA) LIMITED",
+    "nameZh": "中國工商銀行(亞洲)",
+    "freqUsed": "N"
+  },
+  {
+    "code": "074",
+    "nameEn": "Barclays Bank PLC",
+    "nameZh": "Barclays Bank PLC",
+    "freqUsed": "N"
+  },
+  {
+    "code": "076",
+    "nameEn": "The Bank of Nova Scotia",
+    "nameZh": "The Bank of Nova Scotia",
+    "freqUsed": "N"
+  },
+  {
+    "code": "080",
+    "nameEn": "Royal Bank of Canada, Hong Kong Branch",
+    "nameZh": "Royal Bank of Canada, Hong Kong Branch",
+    "freqUsed": "N"
+  },
+  {
+    "code": "081",
+    "nameEn": "SOCIETE GENERALE HONGKONG BRANCH",
+    "nameZh": "法國興業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "082",
+    "nameEn": "STATE BANK OF INDIA",
+    "nameZh": "印度國家銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "085",
+    "nameEn": "Toronto Dominion Bank",
+    "nameZh": "加拿大多倫多道明銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "086",
+    "nameEn": "BANK OF  MONTREAL",
+    "nameZh": "滿地可銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "092",
+    "nameEn": "CANADIAN IMPERIAL BANK OF COMMERCE",
+    "nameZh": "加拿大帝國商業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "097",
+    "nameEn": "Commerzbank AG, Hong Kong Branch",
+    "nameZh": "德國商業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "103",
+    "nameEn": "UBS AG Hong Kong",
+    "nameZh": "UBS AG Hong Kong",
+    "freqUsed": "N"
+  },
+  {
+    "code": "109",
+    "nameEn": "Mizuho Bank, Ltd.",
+    "nameZh": "瑞穗銀行 香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "113",
+    "nameEn": "DZ BANK AG DEUTSCHE ZENTRAL-GENOSSENSCHAFTSBANK, FRANKFURT AM MAIN, HONG KONG BRANCH",
+    "nameZh": "德國中央合作銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "118",
+    "nameEn": "Woori Bank Hong Kong Branch",
+    "nameZh": "Woori Bank Hong Kong Branch",
+    "freqUsed": "N"
+  },
+  {
+    "code": "119",
+    "nameEn": "PHILIPPINE NATIONAL BANK",
+    "nameZh": "PHILIPPINE NATIONAL BANK",
+    "freqUsed": "N"
+  },
+  {
+    "code": "128",
+    "nameEn": "Fubon Bank (Hong Kong) Limited",
+    "nameZh": "富邦銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "138",
+    "nameEn": "MITSUBISHI UFJ TRUST AND BANKING CORPORATION",
+    "nameZh": "三菱UFJ信託銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "139",
+    "nameEn": "The Bank of New York Mellon, Hong Kong Branch",
+    "nameZh": "紐約梅隆銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "145",
+    "nameEn": "ING Bank N.V., Hong Kong",
+    "nameZh": "ING Bank N.V., Hong Kong",
+    "freqUsed": "N"
+  },
+  {
+    "code": "147",
+    "nameEn": "Banco Bilbao Vizcaya Argentaria S.A., Hong Kong Branch",
+    "nameZh": "西班牙對外銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "150",
+    "nameEn": "National Australia Bank Limited",
+    "nameZh": "National Australia Bank Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "151",
+    "nameEn": "Westpac Banking Corporation",
+    "nameZh": "澳大利亞西太平洋銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "152",
+    "nameEn": "Australia and New Zealand Banking Corporation Limited",
+    "nameZh": "澳新銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "153",
+    "nameEn": "Commonwealth Bank of Australia",
+    "nameZh": "澳洲聯邦銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "161",
+    "nameEn": "Intesa Sanpaolo S.p.A., Hong Kong",
+    "nameZh": "Intesa Sanpaolo S.p.A., Hong Kong",
+    "freqUsed": "N"
+  },
+  {
+    "code": "164",
+    "nameEn": "UNICREDIT BANK AG HONG KONG BRANCH",
+    "nameZh": "裕信(德國)銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "170",
+    "nameEn": "The Chiba Bank Ltd",
+    "nameZh": "千葉銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "178",
+    "nameEn": "KBC Bank N.V. Hong Kong Branch",
+    "nameZh": "比利時聯合銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "180",
+    "nameEn": "Wells Fargo Bank, N.A. Hong Kong Branch",
+    "nameZh": "富國銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "183",
+    "nameEn": "COOPERATIEVE RABOBANK U.A.",
+    "nameZh": "荷蘭合作銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "185",
+    "nameEn": "DBS Bank Ltd, HK Branch",
+    "nameZh": "星展銀行, 香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "186",
+    "nameEn": "The Shizuoka  Bank, Ltd.",
+    "nameZh": "靜岡銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "188",
+    "nameEn": "The Hachijuni Bank Ltd",
+    "nameZh": "The Hachijuni Bank Ltd",
+    "freqUsed": "N"
+  },
+  {
+    "code": "198",
+    "nameEn": "HUA NAN COMMERCIAL BANK LTD. (HK BRANCH)",
+    "nameZh": "華南商業銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "199",
+    "nameEn": "THE SHIGA BANK, LTD.",
+    "nameZh": "滋賀銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "201",
+    "nameEn": "BANK OF TAIWAN",
+    "nameZh": "臺灣銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "202",
+    "nameEn": "THE CHUGOKU BANK, LTD.",
+    "nameZh": "THE CHUGOKU BANK, LTD.",
+    "freqUsed": "N"
+  },
+  {
+    "code": "203",
+    "nameEn": "FIRST COMMERCIAL BANK LTD HONG KONG BRANCH",
+    "nameZh": "第一商業銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "206",
+    "nameEn": "CHANG HWA COMMERCIAL BANK LIMITED",
+    "nameZh": "彰化商業銀行 (香港分行)",
+    "freqUsed": "N"
+  },
+  {
+    "code": "210",
+    "nameEn": "NATIXIS HONG KONG BRANCH",
+    "nameZh": "法國外貿銀行香港",
+    "freqUsed": "N"
+  },
+  {
+    "code": "214",
+    "nameEn": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA LIMITED",
+    "nameZh": "中國工商銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "220",
+    "nameEn": "State Street Bank & Trust Company, Hong Kong",
+    "nameZh": "State Street Bank & Trust Company, Hong Kong",
+    "freqUsed": "N"
+  },
+  {
+    "code": "221",
+    "nameEn": "China Construction Bank Corporation, Hong Kong Branch",
+    "nameZh": "中國建設銀行股份有限公司香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "222",
+    "nameEn": "Agricultural Bank of China Limited, Hong Kong Branch",
+    "nameZh": "中國農業銀行股份有限公司香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "227",
+    "nameEn": "Erste Group Bank AG",
+    "nameZh": "Erste Group Bank AG",
+    "freqUsed": "N"
+  },
+  {
+    "code": "229",
+    "nameEn": "CTBC BANK CO., LTD",
+    "nameZh": "中國信託商業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "230",
+    "nameEn": "Taiwan Business Bank, Ltd.",
+    "nameZh": "臺灣中小企業銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "233",
+    "nameEn": "Credit Suisse AG Hong Kong Branch",
+    "nameZh": "瑞士信貸銀行股份有限公司香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "236",
+    "nameEn": "Cathay United Bank Company, Limited, Hong Kong Branch",
+    "nameZh": "國泰世華銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "237",
+    "nameEn": "EFG Bank AG Hong Kong Branch",
+    "nameZh": "瑞士盈豐銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "238",
+    "nameEn": "China Merchants Bank Co. Ltd. Hong Kong Branch",
+    "nameZh": "招商銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "239",
+    "nameEn": "Taipei Fubon Commercial Bank",
+    "nameZh": "台北富邦商業銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "241",
+    "nameEn": "Bank SinoPac (Hong Kong Branch)",
+    "nameZh": "永豐商業銀行股份有限公司香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "242",
+    "nameEn": "Mega International Commercial Bank Co Ltd",
+    "nameZh": "兆豐國際商業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "243",
+    "nameEn": "E.Sun Commercial Bank, Ltd.",
+    "nameZh": "玉山商業銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "245",
+    "nameEn": "Taishin International Bank Co Ltd",
+    "nameZh": "台新國際商業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "248",
+    "nameEn": "Hong Leong Bank Berhad Hong Kong Branch",
+    "nameZh": "豐隆銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "250",
+    "nameEn": "Citibank (Hong Kong) Limited",
+    "nameZh": "花旗銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "251",
+    "nameEn": "ICICI BANK LIMITED",
+    "nameZh": "ICICI BANK LIMITED",
+    "freqUsed": "N"
+  },
+  {
+    "code": "254",
+    "nameEn": "Melli Bank Plc",
+    "nameZh": "Melli Bank Plc",
+    "freqUsed": "N"
+  },
+  {
+    "code": "258",
+    "nameEn": "EAST WEST BANK",
+    "nameZh": "華美銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "260",
+    "nameEn": "Far Eastern International Bank Co Ltd.",
+    "nameZh": "遠東國際商業銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "263",
+    "nameEn": "CATHAY BANK",
+    "nameZh": "國泰銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "264",
+    "nameEn": "LAND BANK OF TAIWAN CO.,LTD.",
+    "nameZh": "臺灣土地銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "265",
+    "nameEn": "Taiwan Cooperative Bank",
+    "nameZh": "合作金庫商業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "266",
+    "nameEn": "PUNJAB NATIONAL BANK",
+    "nameZh": "PUNJAB NATIONAL BANK",
+    "freqUsed": "N"
+  },
+  {
+    "code": "267",
+    "nameEn": "BANCO SANTANDER S.A.",
+    "nameZh": "西班牙桑坦德銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "268",
+    "nameEn": "UNION  BANK OF INDIA",
+    "nameZh": "UNION  BANK OF INDIA",
+    "freqUsed": "N"
+  },
+  {
+    "code": "269",
+    "nameEn": "The Shanghai Commercial & Savings Bank Ltd.Hong Kong Branch.",
+    "nameZh": "上海商業儲蓄銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "271",
+    "nameEn": "INDUSTRIAL BANK OF KOREA",
+    "nameZh": "中小企業銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "272",
+    "nameEn": "Bank of Singapore Limited",
+    "nameZh": "新加坡銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "273",
+    "nameEn": "Shinhan Bank Hong Kong Branch",
+    "nameZh": "新韓銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "274",
+    "nameEn": "O-Bank Co., Ltd",
+    "nameZh": "O-Bank Co., Ltd",
+    "freqUsed": "N"
+  },
+  {
+    "code": "275",
+    "nameEn": "BNP PARIBAS SECURITIES SERVICES",
+    "nameZh": "法國巴黎銀行全球托管行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "276",
+    "nameEn": "China Development Bank Hong Kong Branch",
+    "nameZh": "國家開發銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "277",
+    "nameEn": "First Abu Dhabi Bank PJSC",
+    "nameZh": "First Abu Dhabi Bank PJSC",
+    "freqUsed": "N"
+  },
+  {
+    "code": "278",
+    "nameEn": "BANK J. SAFRA SARASIN LTD, HONG KONG BRANCH",
+    "nameZh": "瑞士嘉盛銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "307",
+    "nameEn": "ABN AMRO BANK N.V.",
+    "nameZh": "ABN AMRO BANK N.V.",
+    "freqUsed": "N"
+  },
+  {
+    "code": "308",
+    "nameEn": "HDFC BANK LIMITED",
+    "nameZh": "HDFC BANK LIMITED",
+    "freqUsed": "N"
+  },
+  {
+    "code": "309",
+    "nameEn": "Union Bancaire Privee, UBP SA",
+    "nameZh": "瑞聯銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "316",
+    "nameEn": "Skandinaviska Enskilda Banken AB",
+    "nameZh": "Skandinaviska Enskilda Banken AB",
+    "freqUsed": "N"
+  },
+  {
+    "code": "320",
+    "nameEn": "BANK JULIUS BAER AND CO LTD HONG KONG",
+    "nameZh": "瑞士寶盛銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "324",
+    "nameEn": "Credit Industriel et Commercial, Hong Kong Branch",
+    "nameZh": "Credit Industriel et Commercial, Hong Kong Branch",
+    "freqUsed": "N"
+  },
+  {
+    "code": "337",
+    "nameEn": "Taiwan Shin Kong Commercial Bank Co., LTD.",
+    "nameZh": "臺灣新光商業銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "339",
+    "nameEn": "CA Indosuez (Switzerland) SA",
+    "nameZh": "東方匯理財富管理",
+    "freqUsed": "N"
+  },
+  {
+    "code": "342",
+    "nameEn": "LGT Bank AG., HK Branch",
+    "nameZh": "皇家銀行(香港)",
+    "freqUsed": "N"
+  },
+  {
+    "code": "345",
+    "nameEn": "Shanghai Pudong Development Bank Co., Ltd.",
+    "nameZh": "上海浦東發展銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "353",
+    "nameEn": "China Minsheng Banking Corp., Ltd.",
+    "nameZh": "中國民生銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "359",
+    "nameEn": "China Guangfa Bank Co., Ltd.",
+    "nameZh": "廣發銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "361",
+    "nameEn": "CHINA BOHAI BANK CO., LTD.",
+    "nameZh": "渤海銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "364",
+    "nameEn": "Banque Pictet & Cie SA",
+    "nameZh": "Banque Pictet & Cie SA",
+    "freqUsed": "N"
+  },
+  {
+    "code": "365",
+    "nameEn": "Bank of Dongguan Co., Ltd.",
+    "nameZh": "東莞銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "368",
+    "nameEn": "China Everbright Bank",
+    "nameZh": "中國光大銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "371",
+    "nameEn": "Sumitomo Mitsui Trust Bank, Limited, Hong Kong Branch",
+    "nameZh": "三井住友信託銀行香港支店",
+    "freqUsed": "N"
+  },
+  {
+    "code": "374",
+    "nameEn": "CIMB BANK BERHAD",
+    "nameZh": "聯昌銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "376",
+    "nameEn": "NongHyup Bank",
+    "nameZh": "農協銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "377",
+    "nameEn": "Industrial Bank Co., Ltd., Hong Kong Branch",
+    "nameZh": "興業銀行香港分行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "378",
+    "nameEn": "YUANTA COMMERCIAL BANK CO.,LTD",
+    "nameZh": "元大商業銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "379",
+    "nameEn": "Mashreq Bank Public Shareholding Company",
+    "nameZh": "Mashreq Bank Public Shareholding Company",
+    "freqUsed": "N"
+  },
+  {
+    "code": "381",
+    "nameEn": "Kookmin Bank",
+    "nameZh": "Kookmin Bank",
+    "freqUsed": "N"
+  },
+  {
+    "code": "382",
+    "nameEn": "Bank of Communications (Hong Kong) Ltd.",
+    "nameZh": "交通銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "383",
+    "nameEn": "CHINA ZHESHANG BANK CO., LTD.",
+    "nameZh": "浙商銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "384",
+    "nameEn": "Morgan Stanley Bank Asia Limited",
+    "nameZh": "摩根士丹利銀行亞洲有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "385",
+    "nameEn": "Ping An Bank Co., Ltd.",
+    "nameZh": "平安銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "386",
+    "nameEn": "Hua Xia Bank Co., Limited",
+    "nameZh": "華夏銀行股份有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "387",
+    "nameEn": "ZA Bank Limited",
+    "nameZh": "眾安銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "388",
+    "nameEn": "Livi Bank Limited",
+    "nameZh": "Livi Bank Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "389",
+    "nameEn": "Mox Bank Limited",
+    "nameZh": "Mox Bank Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "390",
+    "nameEn": "Welab Bank Limited",
+    "nameZh": "Welab Bank Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "391",
+    "nameEn": "Fusion Bank Limited",
+    "nameZh": "富融銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "392",
+    "nameEn": "Ping An OneConnect Bank (Hong Kong) Limited",
+    "nameZh": "平安壹賬通銀行(香港)有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "393",
+    "nameEn": "Ant Bank (Hong Kong) Limited",
+    "nameZh": "螞蟻銀行(香港) 有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "394",
+    "nameEn": "Qatar National Bank (Q.P.S.C.)",
+    "nameZh": "卡塔爾國家銀行",
+    "freqUsed": "N"
+  },
+  {
+    "code": "395",
+    "nameEn": "Airstar Bank Limited",
+    "nameZh": "天星銀行有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "888",
+    "nameEn": "Hong Kong Monetary Authority",
+    "nameZh": "Hong Kong Monetary Authority",
+    "freqUsed": "N"
+  },
+  {
+    "code": "930",
+    "nameEn": "EPAYLINKS TECHNOLOGY CO., LIMITED",
+    "nameZh": "全球付技術有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "931",
+    "nameEn": "WeChat Pay Hong Kong Limited",
+    "nameZh": "WeChat Pay Hong Kong Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "933",
+    "nameEn": "33 Financial Services Limited",
+    "nameZh": "三三金融服務有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "934",
+    "nameEn": "UniCard Solution Limited",
+    "nameZh": "UniCard Solution Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "935",
+    "nameEn": "HKT Payment Limited",
+    "nameZh": "HKT Payment Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "947",
+    "nameEn": "TNG (Asia) Limited",
+    "nameZh": "TNG (Asia) Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "948",
+    "nameEn": "Alipay Financial Services (HK) Limited",
+    "nameZh": "Alipay Financial Services (HK) Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "949",
+    "nameEn": "Octopus Cards Limited",
+    "nameZh": "八達通卡有限公司",
+    "freqUsed": "N"
+  },
+  {
+    "code": "952",
+    "nameEn": "Autotoll Limited",
+    "nameZh": "Autotoll Limited",
+    "freqUsed": "N"
+  },
+  {
+    "code": "954",
+    "nameEn": "PayMe",
+    "nameZh": "PayMe",
+    "freqUsed": "N"
+  },
+  {
+    "code": "955",
+    "nameEn": "Yintran Group Holdings Limited",
+    "nameZh": "銀傳集團有限公司",
+    "freqUsed": "N"
+  }
+]
